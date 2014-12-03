@@ -10,21 +10,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <title>Free Leoshop Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/form.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
 <!-- start menu -->
-<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/megamenu.js"></script>
+<link href="${pageContext.request.contextPath}/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <!--start slider -->
     <link rel="stylesheet" href="css/fwslider.css" media="all">
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/css3-mediaqueries.js"></script>
-    <script src="js/fwslider.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
+    <script src="${pageContext.request.contextPath}/js/fwslider.js"></script>
 <!--end slider -->
-<script src="js/jquery.easydropdown.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.easydropdown.js"></script>
 </head>
 <body>
      <div class="header-top">
@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					<a href="index.html"><img src="${pageContext.request.contextPath}/images/logo.png" alt=""/></a>
 				</div>
 				<div class="menu">
 	            <ul class="megamenu skyblue">
@@ -185,7 +185,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="slider_container">
             <div class="slide"> 
                 <!-- Slide image -->
-                    <img src="images/banner.jpg" alt=""/>
+                    <img src="${pageContext.request.contextPath}/images/banner.jpg" alt=""/>
                 <!-- /Slide image -->
                 <!-- Texts container -->
                 <div class="slide_content">
@@ -203,7 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <!-- /Duplicate to create more slides -->
             <div class="slide">
-                <img src="images/banner1.jpg" alt=""/>
+                <img src="${pageContext.request.contextPath}/images/banner1.jpg" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <h4 class="title">consectetuer adipiscing </h4>
@@ -228,7 +228,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   <a href="single.html">
 				<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic.jpg" alt=""/>
 					</div>
                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -248,7 +248,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   	 <a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic1.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic1.jpg" alt=""/>
 					</div>
                     <div class="price">
 					   <div class="cart-left">
@@ -267,7 +267,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 				  <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic2.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
 					</div>
                     <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
                     <div class="price">
@@ -291,7 +291,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  	 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic3.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic3.jpg" alt=""/>
 					</div>
                     <div class="price">
 					   <div class="cart-left">
@@ -310,7 +310,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic4.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic4.jpg" alt=""/>
 					</div>
 					 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -330,7 +330,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic5.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic5.jpg" alt=""/>
 					</div>
                     <div class="price">
 					   <div class="cart-left">
@@ -352,7 +352,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  	 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic6.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic6.jpg" alt=""/>
 					</div>
                      <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -372,7 +372,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic7.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic7.jpg" alt=""/>
 					</div>
 					 <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
                     <div class="price">
@@ -393,7 +393,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic8.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic8.jpg" alt=""/>
 					</div>
                    	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -417,7 +417,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  	 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic8.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic8.jpg" alt=""/>
 					</div>
                      <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -437,7 +437,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic4.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic4.jpg" alt=""/>
 					</div>
 				    <div class="price">
 					   <div class="cart-left">
@@ -456,7 +456,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic2.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
 					</div>
                    	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -480,7 +480,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  	 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic5.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic5.jpg" alt=""/>
 					</div>
                      <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -500,7 +500,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic2.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
 					</div>
 					 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -520,7 +520,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="images/pic3.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic3.jpg" alt=""/>
 					</div>
                    	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
@@ -544,7 +544,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <div class="border">
 	             <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
 	             <link href="css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
-				  <script src="js/jquery.nivo.slider.js"></script>
+				  <script src="${pageContext.request.contextPath}/js/jquery.nivo.slider.js"></script>
 				    <script type="text/javascript">
 				    $(window).load(function() {
 				        $('#slider').nivoSlider();
@@ -552,9 +552,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    </script>
 		    <div class="slider-wrapper theme-default">
               <div id="slider" class="nivoSlider">
-                <img src="images/t-img1.jpg"  alt="" />
-               	<img src="images/t-img2.jpg"  alt="" />
-                <img src="images/t-img3.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/t-img1.jpg"  alt="" />
+               	<img src="${pageContext.request.contextPath}/images/t-img2.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/t-img3.jpg"  alt="" />
               </div>
              </div>
               <div class="btn"><a href="single.html">Check it Out</a></div>
@@ -581,12 +581,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <div class="section group example">
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
+					  <li><img src="${pageContext.request.contextPath}/images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
+					  <li><img src="${pageContext.request.contextPath}/images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
