@@ -41,7 +41,7 @@ body{
 	-ms-transition:all .2s linear;
 }
 .header-top{
-	background:#4cb1ca;
+	background:#94BBF7;
 }
 .header-top-left{
 	width:54.5%;
@@ -368,7 +368,7 @@ ul.last li a:hover{
 .rsidebar{
 	display: block;
 	float:left;
-	margin: 2.7% 0 1% 2.6%;
+	margin: 5% 0 1% 2.6%;
 } 	
 .span_2_of_3 {
 	width:77.1%;
@@ -394,7 +394,7 @@ ul.last li a:hover{
 	-o-box-shadow:0 0 5px #aaa;
 }
 .span_1_of_3:hover{
-	background:#4CB1CA;
+	background:#94BBF7;
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
@@ -639,7 +639,7 @@ p.m_text{
 /*--footer--*/
 /*  GRID OF TWO   ============================================================================= */
 .footer-top{
-	background:#4cb1ca;
+	background:#94BBF7;
 }
 .col_1_of_2{
 	display: block;
@@ -666,13 +666,7 @@ ul.f-list span.f-text {
 	padding:2% 0;
 }
 .footer-middle{
-	background: rgb(57,160,185);
-	background: -moz-linear-gradient(top,  rgba(57,160,185,1) 0%, rgba(57,160,185,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(57,160,185,1)), color-stop(100%,rgba(57,160,185,1)));
-	background: -webkit-linear-gradient(top,  rgba(57,160,185,1) 0%,rgba(57,160,185,1) 100%);
-	background: -o-linear-gradient(top,  rgba(57,160,185,1) 0%,rgba(57,160,185,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(57,160,185,1) 0%,rgba(57,160,185,1) 100%);
-	background: linear-gradient(to bottom,  rgba(57,160,185,1) 0%,rgba(57,160,185,1) 100%);
+	background: #94BBF7;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39a0b9', endColorstr='#39a0b9',GradientType=0 );
 }
 .span_1_of_f_2  h3{
@@ -889,7 +883,7 @@ ul.f-list1 li a:hover {
 }
 /*--footer-bottom--*/
 .footer-bottom{
-	background:#0b4b5a;
+	background:#41527B;
 	padding:2% 0;
 }
 .copy{

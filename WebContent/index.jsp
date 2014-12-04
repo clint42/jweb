@@ -1,13 +1,8 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Leoshop Website Template | Home :: w3layouts</title>
+<title>Lacob | Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -42,7 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    				        <select tabindex="4" class="dropdown">
 							<option value="" class="label" value="">Currency :</option>
 							<option value="1">$ Dollar</option>
-							<option value="2">€ Euro</option>
+							<option value="2">â¬ Euro</option>
 						</select>
    				    </div>
    				    <div class="clear"></div>
@@ -63,11 +58,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
-					<a href="index.html"><img src="${pageContext.request.contextPath}/images/logo.png" alt=""/></a>
+					<a href="index.jsp"><img src="${pageContext.request.contextPath}/images/logo.png" alt=""/></a>
 				</div>
 				<div class="menu">
 	            <ul class="megamenu skyblue">
-			<li class="active grid"><a href="index.html">Home</a></li>
+			<li class="active grid"><a href="index.jsp">Home</a></li>
 			<li><a class="color4" href="#">women</a>
 				<div class="megapanel">
 					<div class="row">
@@ -185,17 +180,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="slider_container">
             <div class="slide"> 
                 <!-- Slide image -->
-                    <img src="${pageContext.request.contextPath}/images/banner.jpg" alt=""/>
+                    <img src="${pageContext.request.contextPath}/images/banner1.png" alt=""/>
                 <!-- /Slide image -->
                 <!-- Texts container -->
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <!-- Text title -->
-                        <h4 class="title">Aluminium Club</h4>
+                        <h4 class="title">It's not a hardware problem</h4>
                         <!-- /Text title -->
                         
                         <!-- Text description -->
-                        <p class="description">Experiance ray ban</p>
+                        <p class="description">It's a bocal problem</p>
                         <!-- /Text description -->
                     </div>
                 </div>
@@ -203,12 +198,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <!-- /Duplicate to create more slides -->
             <div class="slide">
-                <img src="${pageContext.request.contextPath}/images/banner1.jpg" alt=""/>
+                <img src="${pageContext.request.contextPath}/images/banner2.png" alt=""/>
                 <div class="slide_content">
-                    <div class="slide_content_wrap">
-                        <h4 class="title">consectetuer adipiscing </h4>
-                        <p class="description">diam nonummy nibh euismod</p>
-                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="${pageContext.request.contextPath}/images/banner3.png" alt=""/>
+                <div class="slide_content">
                 </div>
             </div>
             <!--/slide -->
@@ -222,20 +218,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="wrap">
 		<div class="section group">
 		  <div class="cont span_2_of_3">
-		  	<h2 class="head">Featured Products</h2>
+		  	<h2 class="head">Hard Drive Products</h2>
 			<div class="top-box">
 			 <div class="col_1_of_3 span_1_of_3"> 
 			   <a href="single.html">
 				<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic1.jpg" alt=""/>
 					</div>
                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
 					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
+							<p class="title">Hard Drive 7200 rpm</p>
 							<div class="price1">
-							  <span class="actual">$12.00</span>
+							  <span class="actual">59.99 &euro;</span>
 							</div>
 						</div>
 						<div class="cart-right"> </div>
@@ -248,13 +244,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   	 <a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic1.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
 					</div>
                     <div class="price">
 					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
+							<p class="title">Hard Drive 7200 rpm</p>
 							<div class="price1">
-							  <span class="actual">$12.00</span>
+							  <span class="actual">69.99 &euro;</span>
 							</div>
 						</div>
 						<div class="cart-right"> </div>
@@ -267,15 +263,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 				  <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic3.jpg" alt=""/>
 					</div>
                     <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
                     <div class="price">
 					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
+							<p class="title">Hard Drive 7200 rpm</p>
 							<div class="price1">
-							  <span class="reducedfrom">$66.00</span>
-							  <span class="actual">$12.00</span>
+							  <span class="reducedfrom">74.99 &euro;</span>
+							  <span class="actual">70.00 &euro;</span>
 							</div>
 						</div>
 						<div class="cart-right"> </div>
@@ -286,145 +282,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="clear"></div>
 			</div>	
-			<div class="top-box">
-			  <div class="col_1_of_3 span_1_of_3">
-			  	 <a href="single.html">
-				 <div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic3.jpg" alt=""/>
-					</div>
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="col_1_of_3 span_1_of_3">
-					<a href="single.html">
-					<div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic4.jpg" alt=""/>
-					</div>
-					 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="col_1_of_3 span_1_of_3">
-				 <a href="single.html">
-				 <div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic5.jpg" alt=""/>
-					</div>
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                 </a>
-				</div>
-				<div class="clear"></div>
-			</div>	
-			<div class="top-box1">
-			  <div class="col_1_of_3 span_1_of_3">
-			  	 <a href="single.html">
-				 <div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic6.jpg" alt=""/>
-					</div>
-                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="col_1_of_3 span_1_of_3">
-				 <a href="single.html">
-					<div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic7.jpg" alt=""/>
-					</div>
-					 <div class="sale-box1"><span class="on_sale title_shop">Sale</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="reducedfrom">$66.00</span>
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="col_1_of_3 span_1_of_3">
-				  <a href="single.html">
-				 <div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic8.jpg" alt=""/>
-					</div>
-                   	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="clear"></div>
-			</div>	
-		  <h2 class="head">Staff Pick</h2>
+		  <h2 class="head">SSD Products</h2>
 		  <div class="top-box1">
 			  <div class="col_1_of_3 span_1_of_3">
 			  	 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic8.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic4.jpg" alt=""/>
 					</div>
                      <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
 					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
+							<p class="title">SSD 128Go</p>
 							<div class="price1">
-							  <span class="actual">$12.00</span>
+							  <span class="actual">55.99 &euro;</span>
 							</div>
 						</div>
 						<div class="cart-right"> </div>
@@ -437,13 +308,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <a href="single.html">
 					<div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic4.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic5.jpg" alt=""/>
 					</div>
 				    <div class="price">
 					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
+							<p class="title">SSD 256Go</p>
 							<div class="price1">
-							  <span class="actual">$12.00</span>
+							  <span class="actual">105.99 &euro;</span>
 							</div>
 						</div>
 						<div class="cart-right"> </div>
@@ -456,78 +327,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <a href="single.html">
 				 <div class="inner_content clearfix">
 					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
+						<img src="${pageContext.request.contextPath}/images/pic6.jpg" alt=""/>
 					</div>
                    	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
                     <div class="price">
 					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
+							<p class="title">SSD 512Go</p>
 							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="clear"></div>
-			</div>	
-	        <h2 class="head">New Products</h2>	
-		    <div class="section group">
-			  <div class="col_1_of_3 span_1_of_3">
-			  	 <a href="single.html">
-				 <div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic5.jpg" alt=""/>
-					</div>
-                     <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="col_1_of_3 span_1_of_3">
-					<a href="single.html">
-					<div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic2.jpg" alt=""/>
-					</div>
-					 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
-							</div>
-						</div>
-						<div class="cart-right"> </div>
-						<div class="clear"></div>
-					 </div>				
-                   </div>
-                   </a>
-				</div>
-				<div class="col_1_of_3 span_1_of_3">
-				 <a href="single.html">
-				 <div class="inner_content clearfix">
-					<div class="product_image">
-						<img src="${pageContext.request.contextPath}/images/pic3.jpg" alt=""/>
-					</div>
-                   	 <div class="sale-box"><span class="on_sale title_shop">New</span></div>	
-                    <div class="price">
-					   <div class="cart-left">
-							<p class="title">Lorem Ipsum simply</p>
-							<div class="price1">
-							  <span class="actual">$12.00</span>
+							  <span class="actual">189.99 &euro;</span>
 							</div>
 						</div>
 						<div class="cart-right"> </div>
@@ -552,9 +359,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    </script>
 		    <div class="slider-wrapper theme-default">
               <div id="slider" class="nivoSlider">
-                <img src="${pageContext.request.contextPath}/images/t-img1.jpg"  alt="" />
-               	<img src="${pageContext.request.contextPath}/images/t-img2.jpg"  alt="" />
-                <img src="${pageContext.request.contextPath}/images/t-img3.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/pic1.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/pic2.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/pic3.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/pic4.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/pic5.jpg"  alt="" />
+                <img src="${pageContext.request.contextPath}/images/pic6.jpg"  alt="" />
+<%--                	<img src="${pageContext.request.contextPath}/images/t-img2.jpg"  alt="" /> --%>
+<%--                 <img src="${pageContext.request.contextPath}/images/t-img3.jpg"  alt="" /> --%>
               </div>
              </div>
               <div class="btn"><a href="single.html">Check it Out</a></div>
@@ -584,95 +396,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  <li><img src="${pageContext.request.contextPath}/images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
 					</ul>
 				</div>
-				<div class="col_1_of_2 span_1_of_2">
-					<ul class="f-list">
-					  <li><img src="${pageContext.request.contextPath}/images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
-					</ul>
-				</div>
 				<div class="clear"></div>
 		      </div>
 			</div>
 		</div>
 		<div class="footer-middle">
 			<div class="wrap">
-			 <!-- <div class="section group">
-			  	<div class="f_10">
-					<div class="col_1_of_4 span_1_of_4">
-						<h3>Facebook</h3>
-						<script>(function(d, s, id) {
-						  var js, fjs = d.getElementsByTagName(s)[0];
-						  if (d.getElementById(id)) return;
-						  js = d.createElement(s); js.id = id;
-						  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-						  fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));</script>
-						<div class="like_box">	
-							<div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-						</div>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<h3>From Twitter</h3>
-						<div class="recent-tweet">
-							<div class="recent-tweet-icon">
-								<span> </span>
-							</div>
-							<div class="recent-tweet-info">
-								<p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-							</div>
-							<div class="clear"> </div>
-						</div>
-						<div class="recent-tweet">
-							<div class="recent-tweet-icon">
-								<span> </span>
-							</div>
-							<div class="recent-tweet-info">
-								<p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-							</div>
-							<div class="clear"> </div>
-						</div>
-					</div>
-				</div>
-				<div class="f_10">
-					<div class="col_1_of_4 span_1_of_4">
-					    <h3>Information</h3>
-						<ul class="f-list1">
-						    <li><a href="#">Duis autem vel eum iriure </a></li>
-				            <li><a href="#">anteposuerit litterarum formas </a></li>
-				            <li><a href="#">Tduis dolore te feugait nulla</a></li>
-				             <li><a href="#">Duis autem vel eum iriure </a></li>
-				            <li><a href="#">anteposuerit litterarum formas </a></li>
-				            <li><a href="#">Tduis dolore te feugait nulla</a></li>
-			         	</ul>
-					</div>
-					<div class="col_1_of_4 span_1_of_4">
-						<h3>Contact us</h3>
-						<div class="company_address">
-					                <p>500 Lorem Ipsum Dolor Sit,</p>
-							   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-							   		<p>USA</p>
-					   		<p>Phone:(00) 222 666 444</p>
-					   		<p>Fax: (000) 000 00 00 0</p>
-					 	 	<p>Email: <span>mail[at]leoshop.com</span></p>
-					   		
-					   </div>
-					   <div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Google"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Linked in"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Rss"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Facebook"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-					</div>
-				<div class="clear"></div>
-			</div>
-			<div class="clear"></div>
-		  </div>-->
-		   
-		   
-		   
-		   
-		   
 		   <div class="section group example">
 			  <div class="col_1_of_f_1 span_1_of_f_1">
 				 <div class="section group example">
@@ -729,12 +458,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <div class="col_1_of_f_2 span_1_of_f_2">
 				   <h3>Contact us</h3>
 						<div class="company_address">
-					                <p>500 Lorem Ipsum Dolor Sit,</p>
-							   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-							   		<p>USA</p>
-					   		<p>Phone:(00) 222 666 444</p>
-					   		<p>Fax: (000) 000 00 00 0</p>
-					 	 	<p>Email: <span>mail[at]leoshop.com</span></p>
+							   		<p>Rue Jean Jaures - Villejuif</p>
+							   		<p>France</p>
+					   		<p>Phone: 06 18 01 83 96</p>
+					 	 	<p>Email: <span>aurelien.prieur@epitech.eu</span></p>
 					   		
 					   </div>
 					   <div class="social-media">
@@ -756,7 +483,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="footer-bottom">
 			<div class="wrap">
 	             <div class="copy">
-			        <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+			        <p>Â© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
 		         </div>
 				<div class="f-list2">
 				 <ul>
