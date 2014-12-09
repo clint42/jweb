@@ -3,11 +3,11 @@
   <display-name>JWeb</display-name>
   <servlet>
     <servlet-name>Test</servlet-name>
-    <servlet-class>jweb.Test</servlet-class>
+    <servlet-class>controller.Test</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>UserAuth</servlet-name>
-  	<servlet-class>jweb.UserAuth</servlet-class>
+  	<servlet-class>controller.UserAuth</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>UserAuth</servlet-name>
@@ -19,7 +19,7 @@
   </servlet-mapping>
   <filter>
   	<filter-name>UserFilter</filter-name>
-  	<filter-class>jweb.UserFilter</filter-class>
+  	<filter-class>filter.UserFilter</filter-class>
   	<init-param>
   		<param-name>LogFileName</param-name>
   		<param-value>UserLog.txt</param-value>

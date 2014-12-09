@@ -1,4 +1,4 @@
-package jweb;
+package controller;
 
 import java.io.IOException;
 
