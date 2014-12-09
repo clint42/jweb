@@ -24,24 +24,6 @@
 <body>
      <div class="header-top">
 	   <div class="wrap"> 
-			  <div class="header-top-left">
-			  	   <div class="box">
-   				      <select tabindex="4" class="dropdown">
-							<option value="" class="label" value="">Language :</option>
-							<option value="1">English</option>
-							<option value="2">French</option>
-							<option value="3">German</option>
-					  </select>
-   				    </div>
-   				    <div class="box1">
-   				        <select tabindex="4" class="dropdown">
-							<option value="" class="label" value="">Currency :</option>
-							<option value="1">$ Dollar</option>
-							<option value="2">â¬ Euro</option>
-						</select>
-   				    </div>
-   				    <div class="clear"></div>
-   			 </div>
 			 <div class="cssmenu">
 				<ul>
 					<li class="active"><a href="login.html">Account</a></li> |
@@ -63,7 +45,7 @@
 				<div class="menu">
 	            <ul class="megamenu skyblue">
 			<li class="active grid"><a href="index.jsp">Home</a></li>
-			<li><a class="color4" href="#">women</a>
+			<li><a class="color4" href="#">Hard Drive</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -103,7 +85,7 @@
 					  </div>
 					</div>
 				</li>				
-				<li><a class="color5" href="#">Men</a>
+				<li><a class="color5" href="#">Software</a>
 				<div class="megapanel">
 					<div class="col1">
 							<div class="h_nav">
@@ -141,8 +123,7 @@
 						</div>
 					</div>
 				</li>
-				<li><a class="color6" href="other.html">Other</a></li>
-				<li><a class="color7" href="other.html">Purchase</a></li>
+				<li><a class="color6" href="other.html">Who are we ?</a></li>
 			</ul>
 			</div>
 		</div>
@@ -200,11 +181,19 @@
             <div class="slide">
                 <img src="${pageContext.request.contextPath}/images/banner2.png" alt=""/>
                 <div class="slide_content">
+                	<div class="slide_content_wrap">
+                		<h4 class="title">Want more than garbage ?</h4>
+                		<p class="description">Choose Lacob !</p>
+                	</div>
                 </div>
             </div>
             <div class="slide">
                 <img src="${pageContext.request.contextPath}/images/banner3.png" alt=""/>
                 <div class="slide_content">
+                	<div class="slide_content_wrap">
+                		<h4 class="title">Epitech compliant</h4>
+                		<p class="description">2 openSuse partitions + 1 windows 8 partition</p>
+                	</div>
                 </div>
             </div>
             <!--/slide -->
