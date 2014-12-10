@@ -31,16 +31,7 @@ public class Test extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		try {
-			Context ctx = new InitialContext();
-			Context envContext  = (Context)ctx.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/jweb");
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		// TODO Auto-generated method stub	
 		RequestDispatcher requestDispatcher; 
 		requestDispatcher = request.getRequestDispatcher("index.jsp");
 		requestDispatcher.forward(request, response);
