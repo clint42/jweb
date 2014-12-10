@@ -165,12 +165,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<form action="" method="post" name="login" id="login-form">
 						  <fieldset class="input">
 						    <p id="login-form-username">
-						      <label for="modlgn_username">Email</label>
-						      <input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off">
+						      <label for="username">Username</label>
+						      <input id="username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
 						    </p>
 						    <p id="login-form-password">
-						      <label for="modlgn_passwd">Password</label>
-						      <input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18" autocomplete="off">
+						      <label for="password">Password</label>
+						      <input id="password" type="password" name="password" class="inputbox" size="18" autocomplete="off">
 						    </p>
 						    <div class="remember">
 							    <p id="login-form-remember">

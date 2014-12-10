@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.User;
+
 /**
  * Servlet implementation class UserAuth
  */
@@ -31,6 +33,7 @@ public class UserAuth extends HttpServlet {
 		// TODO Auto-generated method stub
 		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 		dispatcher.forward(request, response);
+		
 	}
 
 	/**
@@ -38,6 +41,8 @@ public class UserAuth extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		User usr = new User();
+		usr.fetchUserFromDb(request.getParameter("username"), request.getParameter("password"));
 		HttpSession session = request.getSession();
 		if (session.isNew()) {
 			String rUser = request.getParameter("user");
