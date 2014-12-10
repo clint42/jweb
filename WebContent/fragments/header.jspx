@@ -1,0 +1,7 @@
+<div class="cssmenu">
+	<ul>
+		<li class="active"><a href="login.html">Account</a></li> |
+		<li><a href="checkout.html">Wishlist</a></li> |
+		<li><a href="checkout.html">Checkout</a></li>
+	</ul>
+</div>
