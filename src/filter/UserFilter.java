@@ -37,31 +37,29 @@ public class UserFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("In userFiler doFilter method");
 		HttpServletRequest httpRequest = (HttpServletRequest)(request);
 		HttpServletResponse httpResponse = (HttpServletResponse)(response);
-		HttpSession session = httpRequest.getSession(false);
-		if (session == null) {
-			System.out.println("Send redirect");
-			httpResponse.sendRedirect("/jweb/Login");
-		}
-		else {
-			if (session.getAttribute("user") != null) {
-				chain.doFilter(request, response);
+		String uri = httpRequest.getRequestURI();
+		String lastSegment = uri.substring(uri.lastIndexOf('/') + 1);
+		if (!lastSegment.equals("Login")) {
+			HttpSession session = httpRequest.getSession(false);
+			if (session == null) {
+				System.out.println("Send redirect");
+				httpResponse.sendRedirect("/jweb/User/Login");
 			}
 			else {
-				session.invalidate();
-				httpResponse.sendRedirect("/jweb/Login");
+				if (session.getAttribute("user") != null) {
+					chain.doFilter(request, response);
+				}
+				else {
+					session.invalidate();
+					httpResponse.sendRedirect("/jweb/User/Login");
+				}
 			}
 		}
-		/* HttpServletRequest httpReq = (HttpServletRequest)(request);
-		String name = httpReq.getRemoteUser();
-		if (name != null) {
-			fc.getServletContext().log("User: " + name);
-		}
 		else {
-			fc.getServletContext().log("User unknown");
-		}*/
+			chain.doFilter(request, response);
+		}
 	}
 
 	/**

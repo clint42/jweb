@@ -31,7 +31,8 @@ public class UserAuth extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+		System.out.println("In the servlet");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 		dispatcher.forward(request, response);
 		
 	}
@@ -42,21 +43,11 @@ public class UserAuth extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		User usr = new User();
-		usr.fetchUserFromDb(request.getParameter("username"), request.getParameter("password"));
-		HttpSession session = request.getSession();
-		if (session.isNew()) {
-			String rUser = request.getParameter("user");
-			String rPassword = request.getParameter("password");
-			//if auth success
-			if (true) {
-				response.sendRedirect("/user/");
-			}
-			else {
-				
-			}
+		if (usr.fetchUserFromDb(request.getParameter("username"), request.getParameter("password"))) {
+			HttpSession session = request.getSession();
 		}
 		else {
-			//User already logged in
+			response.sendRedirect("/Login?authError=true");
 		}
 	}
 

@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>UserAuth</servlet-name>
-  	<url-pattern>/Login</url-pattern>
+  	<url-pattern>/User/Login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Test</servlet-name>

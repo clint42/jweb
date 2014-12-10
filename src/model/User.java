@@ -39,21 +39,18 @@ public class User {
 			stmt.setString(2, username);
 			stmt.setString(3, password);
 			ResultSet rs = stmt.executeQuery();
-			System.out.println("It's a test and it works");
 			if (rs.next()) {
-				System.out.println("There is something in db");
 				this.id = rs.getInt("ID");
 				this.username = rs.getString("username");
 				this.firstName = rs.getString("firstName");
 				this.lastName = rs.getString("lastName");
 				this.role = rs.getString("role");
 				this.mail = rs.getString("mail");
-				System.out.println("id: " + id + " username: " + username + " firstName: " + firstName);
 				return true;
 			}
 			conn.commit();
 			stmt.close();
-			return true;
+			return false;
 		} catch (NamingException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
