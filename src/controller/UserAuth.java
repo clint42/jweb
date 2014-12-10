@@ -48,6 +48,8 @@ public class UserAuth extends HttpServlet {
 		User usr = new User();
 		if (usr.fetchUserFromDb(request.getParameter("username"), request.getParameter("password"))) {
 			HttpSession session = request.getSession();
+			session.setAttribute("user", usr);
+			response.sendRedirect("/jweb/User/Account");
 		}
 		else {
 			response.sendRedirect("/jweb/User/Login?authError=true");

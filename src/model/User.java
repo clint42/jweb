@@ -19,42 +19,79 @@ public class User {
 	private String lastName = "";
 	private String role = "ND";
 	private String mail = "";
+	private String password = "";
 	
 	public User() {
 
 	}
 	
+	public User(int id, String username, String password, String firstName, String lastName, String mail) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mail = mail;
+	}
+	
 	public boolean fetchUserFromDb(String username, String password) {
-		Context ctx;
 		PreparedStatement stmt = null;
-		try {
-			ctx = new InitialContext();
-			Context envContext  = (Context)ctx.lookup("java:/comp/env");
-			DataSource ds = (DataSource)envContext.lookup("jdbc/jweb");
-			Connection conn = ds.getConnection();
-			String query = "SELECT * FROM User WHERE (username=? OR mail=?) AND password=?";
-			conn.setAutoCommit(false);
-			stmt = conn.prepareStatement(query);
-			stmt.setString(1, username);
-			stmt.setString(2, username);
-			stmt.setString(3, password);
-			ResultSet rs = stmt.executeQuery();
-			if (rs.next()) {
-				this.id = rs.getInt("ID");
-				this.username = rs.getString("username");
-				this.firstName = rs.getString("firstName");
-				this.lastName = rs.getString("lastName");
-				this.role = rs.getString("role");
-				this.mail = rs.getString("mail");
-				return true;
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			try {
+				String query = "SELECT * FROM User WHERE (username=? OR mail=?) AND password=?";
+				conn.setAutoCommit(false);
+				stmt = conn.prepareStatement(query);
+				stmt.setString(1, username);
+				stmt.setString(2, username);
+				stmt.setString(3, password);
+				ResultSet rs = stmt.executeQuery();
+				if (rs.next()) {
+					this.id = rs.getInt("ID");
+					this.username = rs.getString("username");
+					this.firstName = rs.getString("firstName");
+					this.lastName = rs.getString("lastName");
+					this.role = rs.getString("role");
+					this.mail = rs.getString("mail");
+					return true;
+				}
+				conn.commit();
+				stmt.close();
+				return false;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
 			}
-			conn.commit();
-			stmt.close();
-			return false;
-		} catch (NamingException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
 		}
+		return false;
+	}
+	
+	public boolean saveToDb() {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail) VALUES(?, ?, ?, ?, ?, ?)";
+			PreparedStatement stmt;
+			try {
+				stmt = conn.prepareStatement(query);
+				stmt.setString(1, this.username);
+				stmt.setString(2, this.password);
+				stmt.setString(3, this.firstName);
+				stmt.setString(4, this.lastName);
+				stmt.setString(5, "U");
+				stmt.setString(6, this.mail);
+				if (stmt.execute()) {
+					return true;
+				}
+				return false;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+			
+			
+		}
+		return false;
 	}
 }
