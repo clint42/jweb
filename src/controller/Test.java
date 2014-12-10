@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+import javax.naming.InitialContext;
+import javax.naming.Context;
+import javax.naming.NamingException;
 
 /**
  * Servlet implementation class Test
@@ -28,6 +32,15 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		try {
+			Context ctx = new InitialContext();
+			Context envContext  = (Context)ctx.lookup("java:/comp/env");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/jweb");
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		RequestDispatcher requestDispatcher; 
 		requestDispatcher = request.getRequestDispatcher("index.jsp");
 		requestDispatcher.forward(request, response);
