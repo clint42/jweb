@@ -41,10 +41,9 @@ public class UserFilter implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse)(response);
 		String uri = httpRequest.getRequestURI();
 		String lastSegment = uri.substring(uri.lastIndexOf('/') + 1);
+		HttpSession session = httpRequest.getSession(false);
 		if (!lastSegment.equals("Login")) {
-			HttpSession session = httpRequest.getSession(false);
 			if (session == null) {
-				System.out.println("Send redirect");
 				httpResponse.sendRedirect("/jweb/User/Login");
 			}
 			else {
@@ -52,13 +51,15 @@ public class UserFilter implements Filter {
 					chain.doFilter(request, response);
 				}
 				else {
-					session.invalidate();
 					httpResponse.sendRedirect("/jweb/User/Login");
 				}
 			}
 		}
-		else {
+		else if (session == null || session.getAttribute("user") == null) {
 			chain.doFilter(request, response);
+		}
+		else if (session != null && session.getAttribute("user") != null) {
+			httpResponse.sendRedirect("/User/Account");
 		}
 	}
 

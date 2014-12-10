@@ -9,7 +9,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>Free Leoshop Website Template | Login :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery1.min.js"></script>
@@ -163,6 +162,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	           		<h4 class="title">Registered Customers</h4>
 					<div id="loginbox" class="loginbox">
 						<form action="" method="post" name="login" id="login-form">
+						  <p style="color:red">
+						 	<%= request.getAttribute("error") %>
+						  </p>
 						  <fieldset class="input">
 						    <p id="login-form-username">
 						      <label for="username">Username</label>

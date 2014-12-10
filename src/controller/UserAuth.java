@@ -32,6 +32,9 @@ public class UserAuth extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("In the servlet");
+		String authError = request.getParameter("authError");
+		String error = (authError != null && authError.equals("true")) ? "Wrong credentials" : "";
+		request.setAttribute("error", error);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 		dispatcher.forward(request, response);
 		
@@ -47,7 +50,7 @@ public class UserAuth extends HttpServlet {
 			HttpSession session = request.getSession();
 		}
 		else {
-			response.sendRedirect("/Login?authError=true");
+			response.sendRedirect("/jweb/User/Login?authError=true");
 		}
 	}
 
