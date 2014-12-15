@@ -1,54 +1,22 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Leoshop Website Template | Register :: w3layouts</title>
+<title>Lacob | Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
 <!-- start menu -->
-<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/megamenu.js"></script>
+<link href="${pageContext.request.contextPath}/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<script src="js/jquery.easydropdown.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.easydropdown.js"></script>
 </head>
 <body> 
-	<div class="header-top">
-			<div class="wrap"> 
-			  <div class="header-top-left">
-			  	   <div class="box">
-   				      <select tabindex="4" class="dropdown">
-							<option value="" class="label" value="">Language :</option>
-							<option value="1">English</option>
-							<option value="2">French</option>
-							<option value="3">German</option>
-					  </select>
-   				    </div>
-   				    <div class="box1">
-   				        <select tabindex="4" class="dropdown">
-							<option value="" class="label" value="">Currency :</option>
-							<option value="1">$ Dollar</option>
-							<option value="2">€ Euro</option>
-						</select>
-   				    </div>
-   				    <div class="clear"></div>
-   			 </div>
-			 <div class="cssmenu">
-				<ul>
-					<li class="active"><a href="login.html">Account</a></li> |
-					<li><a href="checkout.html">Wishlist</a></li> |
-					<li><a href="checkout.html">Checkout</a></li> |
-					<li><a href="login.html">Log In</a></li> |
-					<li><a href="register.html">Sign Up</a></li>
-				</ul>
-			</div>
+     <div class="header-top">
+	   <div class="wrap"> 
+			<jsp:include page="/fragments/header.jsp"/>
 			<div class="clear"></div>
  		</div>
 	</div>
@@ -56,120 +24,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					<a href="index.jsp"><img src="${pageContext.request.contextPath}/images/logo.png" alt=""/></a>
 				</div>
-				<div class="menu">
-	            <ul class="megamenu skyblue">
-			<li class="active grid"><a href="index.html">Home</a></li>
-			<li><a class="color4" href="#">women</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Contact Lenses</h4>
-								<ul>
-									<li><a href="womens.html">Daily-wear soft lenses</a></li>
-									<li><a href="womens.html">Extended-wear</a></li>
-									<li><a href="womens.html">Lorem ipsum </a></li>
-									<li><a href="womens.html">Planned replacement</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sun Glasses</h4>
-								<ul>
-									<li><a href="womens.html">Heart-Shaped</a></li>
-									<li><a href="womens.html">Square-Shaped</a></li>
-									<li><a href="womens.html">Round-Shaped</a></li>
-									<li><a href="womens.html">Oval-Shaped</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Eye Glasses</h4>
-								<ul>
-									<li><a href="womens.html">Anti Reflective</a></li>
-									<li><a href="womens.html">Aspheric</a></li>
-									<li><a href="womens.html">Bifocal</a></li>
-									<li><a href="womens.html">Hi-index</a></li>
-									<li><a href="womens.html">Progressive</a></li>
-								</ul>	
-							</div>												
-						</div>
-					  </div>
-					</div>
-				</li>				
-				<li><a class="color5" href="#">Men</a>
-				<div class="megapanel">
-					<div class="col1">
-							<div class="h_nav">
-								<h4>Contact Lenses</h4>
-								<ul>
-									<li><a href="mens.html">Daily-wear soft lenses</a></li>
-									<li><a href="mens.html">Extended-wear</a></li>
-									<li><a href="mens.html">Lorem ipsum </a></li>
-									<li><a href="mens.html">Planned replacement</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sun Glasses</h4>
-								<ul>
-									<li><a href="mens.html">Heart-Shaped</a></li>
-									<li><a href="mens.html">Square-Shaped</a></li>
-									<li><a href="mens.html">Round-Shaped</a></li>
-									<li><a href="mens.html">Oval-Shaped</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Eye Glasses</h4>
-								<ul>
-									<li><a href="mens.html">Anti Reflective</a></li>
-									<li><a href="mens.html">Aspheric</a></li>
-									<li><a href="mens.html">Bifocal</a></li>
-									<li><a href="mens.html">Hi-index</a></li>
-									<li><a href="mens.html">Progressive</a></li>
-								</ul>	
-							</div>												
-						</div>
-					</div>
-				</li>
-				<li><a class="color6" href="other.html">Other</a></li>
-				<li><a class="color7" href="other.html">Purchase</a></li>
-			</ul>
-			</div>
 		</div>
-	   <div class="header-bottom-right">
-         <div class="search">	  
-				<input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-				<input type="submit" value="Subscribe" id="submit" name="submit">
-				<div id="response"> </div>
-		 </div>
-	  <div class="tag-list">
-	    <ul class="icon1 sub-icon1 profile_img">
-			<li><a class="active-icon c1" href="#"> </a>
-				<ul class="sub-icon1 list">
-					<li><h3>sed diam nonummy</h3><a href=""></a></li>
-					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
-				</ul>
-			</li>
-		</ul>
-		<ul class="icon1 sub-icon1 profile_img">
-			<li><a class="active-icon c2" href="#"> </a>
-				<ul class="sub-icon1 list">
-					<li><h3>No Products</h3><a href=""></a></li>
-					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
-				</ul>
-			</li>
-		</ul>
-	    <ul class="last"><li><a href="#">Cart(0)</a></li></ul>
-	  </div>
-    </div>
      <div class="clear"></div>
      </div>
 	</div>
@@ -178,13 +35,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	      <h4 class="title">Create an Account</h4>
     		   <form>
     			 <div class="col_1_of_2 span_1_of_2">
-		   			 <div><input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}"></div>
-		    			<div><input type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></div>
-		    			<div><input type="text" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
-		    			<div><input type="text" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
+		   			 <div><input type="text" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}"></div>
+		    			<div><input type="text" value="Last Name" onfocus="if (this.value == 'Last Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Last Name';}"></div>
+		    			<div><input type="text" value="Login" onfocus="if (this.value == 'Login') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Login';}"></div>
+		    			<div><input type="text" value="Password" onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}"></div>
 		    	 </div>
 		    	  <div class="col_1_of_2 span_1_of_2">	
-		    		<div><input type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></div>
+		    		<div><input type="text" value="E-Mail" onfocus="if (this.value == 'E-Mail') {this.value = '';}" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
+		    		<div><input type="text" value="Address" onfocus="if (this.value == 'Address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Address';}"></div>
 		    		<div><select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
 		            <option value="null">Select a Country</option>         
 		            <option value="AX">Åland Islands</option>
@@ -381,15 +239,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		            <option value="ST">Sao Tome and Principe</option>
 		            <option value="SA">Saudi Arabia</option>
 		            <option value="SN">Senegal</option>
-		         </select></div>		        
-		          <div><input type="text" value="City" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'City';}"></div>
-		           <div>
-		          </div>
-		          	<input type="text" value="" class="code"> - <input type="text" value="" class="number">
-		          		<p class="code">Country Code + Phone Number</p>
+		         </select>
+		         </div>		        
+		          <div><input type="text" value="City" onfocus="if (this.value == 'City') {this.value = '';}" onblur="if (this.value == '') {this.value = 'City';}"></div>
 		          </div>
 		      <button class="grey">Submit</button>
-		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
 		    <div class="clear"></div>
 		    </form>
     	</div>
@@ -405,7 +259,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
+					  <li><img src="images/3.png"><span class="f-text">Call us! toll free-01 40 01 08 44 </span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="clear"></div>

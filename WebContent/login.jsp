@@ -22,7 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
     <div class="header-top">
 			<div class="wrap"> 
-			 <jsp:include page="/fragments/header.jspx"/>
+			 <jsp:include page="/fragments/header.jsp"/>
 			<div class="clear"></div>
  		</div>
 	 </div>

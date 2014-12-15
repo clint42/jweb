@@ -1,4 +1,3 @@
-<%@ page import="javax.servlet.http.*" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,14 +23,7 @@
 <body>
      <div class="header-top">
 	   <div class="wrap"> 
-	   	<%
-		if ((session = (HttpSession)(request.getAttribute("session"))) != null && session.getAttribute("user") != null) {
-			%>
-			<p>toto</p>
-			<%
-		}
-		%>
-			<jsp:include page="/fragments/header.jspx"/>
+			<jsp:include page="/fragments/header.jsp"/>
 			<div class="clear"></div>
  		</div>
 	</div>
@@ -44,84 +36,8 @@
 				<div class="menu">
 	            <ul class="megamenu skyblue">
 			<li class="active grid"><a href="index.jsp">Home</a></li>
-			<li><a class="color4" href="#">Hard Drive</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Contact Lenses</h4>
-								<ul>
-									<li><a href="womens.html">Daily-wear soft lenses</a></li>
-									<li><a href="womens.html">Extended-wear</a></li>
-									<li><a href="womens.html">Lorem ipsum </a></li>
-									<li><a href="womens.html">Planned replacement</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sun Glasses</h4>
-								<ul>
-									<li><a href="womens.html">Heart-Shaped</a></li>
-									<li><a href="womens.html">Square-Shaped</a></li>
-									<li><a href="womens.html">Round-Shaped</a></li>
-									<li><a href="womens.html">Oval-Shaped</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Eye Glasses</h4>
-								<ul>
-									<li><a href="womens.html">Anti Reflective</a></li>
-									<li><a href="womens.html">Aspheric</a></li>
-									<li><a href="womens.html">Bifocal</a></li>
-									<li><a href="womens.html">Hi-index</a></li>
-									<li><a href="womens.html">Progressive</a></li>
-								</ul>	
-							</div>												
-						</div>
-					  </div>
-					</div>
-				</li>				
-				<li><a class="color5" href="#">Software</a>
-				<div class="megapanel">
-					<div class="col1">
-							<div class="h_nav">
-								<h4>Contact Lenses</h4>
-								<ul>
-									<li><a href="mens.html">Daily-wear soft lenses</a></li>
-									<li><a href="mens.html">Extended-wear</a></li>
-									<li><a href="mens.html">Lorem ipsum </a></li>
-									<li><a href="mens.html">Planned replacement</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sun Glasses</h4>
-								<ul>
-									<li><a href="mens.html">Heart-Shaped</a></li>
-									<li><a href="mens.html">Square-Shaped</a></li>
-									<li><a href="mens.html">Round-Shaped</a></li>
-									<li><a href="mens.html">Oval-Shaped</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Eye Glasses</h4>
-								<ul>
-									<li><a href="mens.html">Anti Reflective</a></li>
-									<li><a href="mens.html">Aspheric</a></li>
-									<li><a href="mens.html">Bifocal</a></li>
-									<li><a href="mens.html">Hi-index</a></li>
-									<li><a href="mens.html">Progressive</a></li>
-								</ul>	
-							</div>												
-						</div>
-					</div>
-				</li>
+			<li><a class="color4" href="#">Hard Drive</a></li>				
+				<li><a class="color5" href="#">Software</a></li>
 				<li><a class="color6" href="other.html">Who are we ?</a></li>
 			</ul>
 			</div>

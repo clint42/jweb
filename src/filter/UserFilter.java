@@ -42,7 +42,7 @@ public class UserFilter implements Filter {
 		String uri = httpRequest.getRequestURI();
 		String lastSegment = uri.substring(uri.lastIndexOf('/') + 1);
 		HttpSession session = httpRequest.getSession(false);
-		if (!lastSegment.equals("Login")) {
+		if (!lastSegment.equals("Login") && !lastSegment.equals("Register")) {
 			if (session == null) {
 				httpResponse.sendRedirect("/jweb/User/Login");
 			}

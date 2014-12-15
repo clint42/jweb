@@ -31,7 +31,6 @@ public class UserAuth extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("In the servlet");
 		String authError = request.getParameter("authError");
 		String error = (authError != null && authError.equals("true")) ? "Wrong credentials" : "";
 		request.setAttribute("error", error);
