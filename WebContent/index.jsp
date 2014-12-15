@@ -1,4 +1,4 @@
-
+<%@ page import="javax.servlet.http.*" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,6 +24,13 @@
 <body>
      <div class="header-top">
 	   <div class="wrap"> 
+	   	<%
+		if ((session = (HttpSession)(request.getAttribute("session"))) != null && session.getAttribute("user") != null) {
+			%>
+			<p>toto</p>
+			<%
+		}
+		%>
 			<jsp:include page="/fragments/header.jspx"/>
 			<div class="clear"></div>
  		</div>

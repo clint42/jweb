@@ -59,7 +59,7 @@ public class UserFilter implements Filter {
 			chain.doFilter(request, response);
 		}
 		else if (session != null && session.getAttribute("user") != null) {
-			httpResponse.sendRedirect("/User/Account");
+			httpResponse.sendRedirect("/jweb/User/Account");
 		}
 	}
 
