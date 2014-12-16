@@ -1,9 +1,6 @@
 package filter;
 
-import helper.FlashMessenger;
-
 import java.io.IOException;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -11,19 +8,16 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet Filter implementation class GlobalFilter
+ * Servlet Filter implementation class AdminFilter
  */
-public class GlobalFilter implements Filter {
+public class AdminFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public GlobalFilter() {
+    public AdminFilter() {
         // TODO Auto-generated constructor stub
     }
 
@@ -38,12 +32,13 @@ public class GlobalFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest httpReq = (HttpServletRequest)(request);
-		HttpServletResponse httpResp = (HttpServletResponse)(response);
-		HttpSession session = httpReq.getSession(false);
-		//request.setAttribute("session", session);
+		// TODO Auto-generated method stub
+		// place your code here
+
+		// pass the request along the filter chain
 		chain.doFilter(request, response);
 	}
+
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
