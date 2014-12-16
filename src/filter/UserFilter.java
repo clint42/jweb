@@ -37,29 +37,31 @@ public class UserFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest httpRequest = (HttpServletRequest)(request);
-		HttpServletResponse httpResponse = (HttpServletResponse)(response);
-		String uri = httpRequest.getRequestURI();
-		String lastSegment = uri.substring(uri.lastIndexOf('/') + 1);
-		HttpSession session = httpRequest.getSession(false);
-		if (!lastSegment.equals("Login") && !lastSegment.equals("Register")) {
-			if (session == null) {
-				httpResponse.sendRedirect("/jweb/User/Login");
-			}
-			else {
-				if (session.getAttribute("user") != null) {
-					chain.doFilter(request, response);
-				}
-				else {
+		if (request != null && response != null && request instanceof HttpServletRequest && response instanceof HttpServletResponse) {
+			HttpServletRequest httpRequest = (HttpServletRequest)(request);
+			HttpServletResponse httpResponse = (HttpServletResponse)(response);
+			String uri = httpRequest.getRequestURI();
+			String lastSegment = uri.substring(uri.lastIndexOf('/') + 1);
+			HttpSession session = httpRequest.getSession(false);
+			if (!lastSegment.equals("Login") && !lastSegment.equals("Register")) {
+				if (session == null) {
 					httpResponse.sendRedirect("/jweb/User/Login");
 				}
+				else {
+					if (session.getAttribute("user") != null) {
+						chain.doFilter(request, response);
+					}
+					else {
+						httpResponse.sendRedirect("/jweb/User/Login");
+					}
+				}
 			}
-		}
-		else if (session == null || session.getAttribute("user") == null) {
-			chain.doFilter(request, response);
-		}
-		else if (session != null && session.getAttribute("user") != null) {
-			httpResponse.sendRedirect("/jweb/User/Account");
+			else if (session == null || session.getAttribute("user") == null) {
+				chain.doFilter(request, response);
+			}
+			else if (session != null && session.getAttribute("user") != null) {
+				httpResponse.sendRedirect("/jweb/User/Account");
+			}
 		}
 	}
 

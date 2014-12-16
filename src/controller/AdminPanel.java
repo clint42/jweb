@@ -1,7 +1,5 @@
 package controller;
 
-import helper.FlashMessenger;
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -10,18 +8,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class UserAccount
+ * Servlet implementation class AdminPanel
  */
-public class UserAccount extends HttpServlet {
+public class AdminPanel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserAccount() {
+    public AdminPanel() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +27,8 @@ public class UserAccount extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (request.getParameter("action") != null && request.getParameter("action").equals("logout")) {
-			HttpSession session = request.getSession(false);
-			if (session != null) {
-				session.setAttribute("user", null);
-				FlashMessenger.getMessenger(session).addSuccessMessage("You have been logout");
-				response.sendRedirect("/jweb/Home");
-			}
-		}
-		else {
-			RequestDispatcher dispatcher = null;
-			dispatcher = request.getRequestDispatcher("/user/account.jsp");
-			dispatcher.forward(request, response);
-		}
-		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/index.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

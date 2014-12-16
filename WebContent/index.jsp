@@ -22,11 +22,12 @@
 </head>
 <body>
      <div class="header-top">
-	   <div class="wrap"> 
+	   <div class="wrap">
 			<jsp:include page="/fragments/header.jsp"/>
 			<div class="clear"></div>
  		</div>
 	</div>
+	<jsp:include page="/fragments/flashMessenger.jsp"/>
 	<div class="header-bottom">
 	    <div class="wrap">
 			<jsp:include page="/fragments/menu.jsp"/>
@@ -242,8 +243,8 @@
 			    <h2 class="m_1">Newsletters<br> Signup</h2>
 			    <p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p>
 			    <div class="subscribe">
-					 <form>
-					    <input name="userName" type="text" class="textbox">
+					 <form method="post" action="/jweb/Newsletter?action=subscribe">
+					    <input name="mail" type="text" class="textbox">
 					    <input type="submit" value="Subscribe">
 					 </form>
 	  			</div>

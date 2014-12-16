@@ -12,8 +12,8 @@
     <servlet-class>controller.Test</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Newsletter</servlet-name>
-  	<servlet-class>controller.Newsletter</servlet-class>
+    <servlet-name>Newsletter</servlet-name>
+    <servlet-class>controller.Newsletter</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserAccount</servlet-name>
@@ -27,15 +27,17 @@
     <servlet-name>UserRegister</servlet-name>
     <servlet-class>controller.UserRegister</servlet-class>
   </servlet>
-  
-  
+  <servlet>
+    <servlet-name>AdminPanel</servlet-name>
+    <servlet-class>controller.AdminPanel</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/Home</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Newsletter</servlet-name>
-  	<url-pattern>/Newsletter</url-pattern>
+    <servlet-name>Newsletter</servlet-name>
+    <url-pattern>/Newsletter</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserAccount</servlet-name>
@@ -49,20 +51,24 @@
     <servlet-name>UserRegister</servlet-name>
     <url-pattern>/User/Register</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminPanel</servlet-name>
+    <url-pattern>/Admin/Home</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>UserFilter</filter-name>
     <filter-class>filter.UserFilter</filter-class>
   </filter>
   <filter>
-    <filter-name>GlobalFilter</filter-name>
-    <filter-class>filter.GlobalFilter</filter-class>
+  	<filter-name>AdminFilter</filter-name>
+  	<filter-class>filter.AdminFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>UserFilter</filter-name>
     <url-pattern>/User/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
-    <filter-name>GlobalFilter</filter-name>
-    <url-pattern>*</url-pattern>
+    <filter-name>AdminFilter</filter-name>
+    <url-pattern>/Admin/*</url-pattern>
   </filter-mapping>
 </web-app>

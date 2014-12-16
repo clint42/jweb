@@ -1,5 +1,7 @@
 package filter;
 
+import helper.FlashMessenger;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -13,15 +15,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.User;
+
 /**
- * Servlet Filter implementation class GlobalFilter
+ * Servlet Filter implementation class AdminFilter
  */
-public class GlobalFilter implements Filter {
+public class AdminFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public GlobalFilter() {
+    public AdminFilter() {
         // TODO Auto-generated constructor stub
     }
 
@@ -36,12 +40,30 @@ public class GlobalFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest httpReq = (HttpServletRequest)(request);
-		HttpServletResponse httpResp = (HttpServletResponse)(response);
-		HttpSession session = httpReq.getSession(false);
-		request.setAttribute("session", session);
-		chain.doFilter(request, response);
+		if (request != null && response != null && request instanceof HttpServletRequest && response instanceof HttpServletResponse) {
+			HttpServletRequest httpReq = (HttpServletRequest)(request);
+			HttpServletResponse httpResp = (HttpServletResponse)(response);
+			HttpSession session = httpReq.getSession(false);
+			if (session != null) {
+				if (session.getAttribute("user") != null) {
+					User user = (User)(session.getAttribute("user"));
+					if (user.getRole().equals("A")) {
+						chain.doFilter(request, response);
+					}
+					else {
+						FlashMessenger.getMessenger(session).addErrorMessage("You are not allowed to view this page (admin privilege required)");
+					}
+				}
+				else {
+					httpResp.sendRedirect("/jweb/User/Login");
+				}
+			}
+			else {
+				httpResp.sendRedirect("/jweb/User/Login");
+			}
+		}
 	}
+
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
