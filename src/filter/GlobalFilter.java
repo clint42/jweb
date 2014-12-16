@@ -1,5 +1,7 @@
 package filter;
 
+import helper.FlashMessenger;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;

@@ -1,8 +1,8 @@
-<%@ page import="model.*" %>
+<%@ page import="model.*, java.util.ArrayList" %>
 <div class="cssmenu">
 	<ul>
 		<%
-		if ((session = (HttpSession)(request.getAttribute("session"))) != null && session.getAttribute("user") != null) {
+		if (session != null && session.getAttribute("user") != null) {
 			User user = (User)(session.getAttribute("user"));
 			%>
 			<li class="active"><a href="/jweb/User/Account"><%= user.getFirstName() %> <%= user.getLastName() %></a></li>
