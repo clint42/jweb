@@ -22,11 +22,7 @@
 	</div>
 	 <div class="header-bottom">
 	    <div class="wrap">
-			<div class="header-bottom-left">
-				<div class="logo">
-					<a href="index.jsp"><img src="${pageContext.request.contextPath}/images/logo.png" alt=""/></a>
-				</div>
-		</div>
+	    <jsp:include page="fragments/menu.jsp"/>
      <div class="clear"></div>
      </div>
 	</div>
