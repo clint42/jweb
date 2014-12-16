@@ -59,7 +59,7 @@ public class UserRegister extends HttpServlet {
 		
 		if (fname.equals("First Name") || lname.equals("Last Name") || login.equals("Login") ||
 			password.equals("Password") || email.equals("E-Mail") || address.equals("Address") ||
-			country == null || city.equals("City")) {
+			country == null || city.equals("City") || zipcode.equals("Zip Code")) {
 			request.setAttribute("error", "Error : You have to fill all the fields");
 			request.getRequestDispatcher("/register.jsp").forward(request, response);
 		}

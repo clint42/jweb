@@ -23,6 +23,11 @@
     <servlet-name>UserAuth</servlet-name>
     <servlet-class>controller.UserAuth</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UserRegister</servlet-name>
+    <servlet-class>controller.UserRegister</servlet-class>
+  </servlet>
+  
   
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
@@ -39,6 +44,10 @@
   <servlet-mapping>
     <servlet-name>UserAuth</servlet-name>
     <url-pattern>/User/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserRegister</servlet-name>
+    <url-pattern>/User/Register</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>UserFilter</filter-name>
