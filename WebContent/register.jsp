@@ -33,16 +33,18 @@
           <div class="register_account">
           	<div class="wrap">
     	      <h4 class="title">Create an Account</h4>
-    		   <form>
+    	      <p style="color:red"><%= request.getAttribute("error") %></p>
+    		   <form method="post">
     			 <div class="col_1_of_2 span_1_of_2">
-		   			 <div><input type="text" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}"></div>
-		    			<div><input type="text" value="Last Name" onfocus="if (this.value == 'Last Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Last Name';}"></div>
-		    			<div><input type="text" value="Login" onfocus="if (this.value == 'Login') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Login';}"></div>
-		    			<div><input type="text" value="Password" onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}"></div>
+		   			 	<div><input type="text" name="First Name" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}"></div>
+		    			<div><input type="text" name="Last Name" value="Last Name" onfocus="if (this.value == 'Last Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Last Name';}"></div>
+		    			<div><input type="text" name="Login" value="Login" onfocus="if (this.value == 'Login') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Login';}"></div>
+		    			<div><input type="text" name="Password" value="Password" onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}"></div>
+		    			<div><input type="text" name="Confirm Password" value="Confirm Password" onfocus="if (this.value == 'Confirm Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Confirm Password';}"></div>
 		    	 </div>
 		    	  <div class="col_1_of_2 span_1_of_2">	
-		    		<div><input type="text" value="E-Mail" onfocus="if (this.value == 'E-Mail') {this.value = '';}" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
-		    		<div><input type="text" value="Address" onfocus="if (this.value == 'Address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Address';}"></div>
+		    		<div><input type="text" name="E-Mail" value="E-Mail" onfocus="if (this.value == 'E-Mail') {this.value = '';}" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
+		    		<div><input type="text" name="Address" value="Address" onfocus="if (this.value == 'Address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Address';}"></div>
 		    		<div><select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
 		            <option value="null">Select a Country</option>         
 		            <option value="AX">Åland Islands</option>
@@ -241,7 +243,8 @@
 		            <option value="SN">Senegal</option>
 		         </select>
 		         </div>		        
-		          <div><input type="text" value="City" onfocus="if (this.value == 'City') {this.value = '';}" onblur="if (this.value == '') {this.value = 'City';}"></div>
+		          <div><input type="text" name="City" value="City" onfocus="if (this.value == 'City') {this.value = '';}" onblur="if (this.value == '') {this.value = 'City';}"></div>
+		          <div><input type="text" name="Zip Code" value="Zip Code" onfocus="if (this.value == 'Zip Code') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Zip Code';}"></div>
 		          </div>
 		      <button class="grey">Submit</button>
 		    <div class="clear"></div>
