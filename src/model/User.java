@@ -20,18 +20,26 @@ public class User {
 	private String role = "ND";
 	private String mail = "";
 	private String password = "";
+	private String address = "";
+	private String city = "";
+	private String country = "";
+	private String zipcode = "";
 	
 	public User() {
 
 	}
 	
-	public User(int id, String username, String password, String firstName, String lastName, String mail) {
+	public User(int id, String username, String password, String firstName, String lastName, String mail, String address, String city, String country, String zipcode) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mail = mail;
+		this.address = address;
+		this.city = city;
+		this.country = country;
+		this.zipcode = zipcode;
 	}
 	
 	public boolean fetchUserFromDb(String username, String password) {
@@ -70,7 +78,7 @@ public class User {
 	public boolean saveToDb() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
-			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail) VALUES(?, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail, address, city, country, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt;
 			try {
 				stmt = conn.prepareStatement(query);
@@ -80,6 +88,10 @@ public class User {
 				stmt.setString(4, this.lastName);
 				stmt.setString(5, "U");
 				stmt.setString(6, this.mail);
+				stmt.setString(7, this.address);
+				stmt.setString(8, this.city);
+				stmt.setString(9, this.country);
+				stmt.setString(10, this.zipcode);
 				if (stmt.execute()) {
 					return true;
 				}
@@ -89,9 +101,15 @@ public class User {
 				e.printStackTrace();
 				return false;
 			}
-			
-			
 		}
 		return false;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
 	}
 }

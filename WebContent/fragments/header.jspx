@@ -1,7 +1,0 @@
-<div class="cssmenu">
-	<ul>
-		<li class="active"><a href="/jweb/User/Account">Account</a></li> |
-		<li><a href="checkout.html">Wishlist</a></li> |
-		<li><a href="checkout.html">Checkout</a></li>
-	</ul>
-</div>

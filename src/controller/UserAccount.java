@@ -10,18 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.User;
-
 /**
- * Servlet implementation class UserAuth
+ * Servlet implementation class UserAccount
  */
-public class UserAuth extends HttpServlet {
+public class UserAccount extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserAuth() {
+    public UserAccount() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,15 +27,19 @@ public class UserAuth extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String authError = request.getParameter("authError");
-		String error = (authError != null && authError.equals("true")) ? "Wrong credentials" : "";
-		request.setAttribute("error", error);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+		RequestDispatcher dispatcher = null;
+		if (request.getParameter("action") != null && request.getParameter("action").equals("logout")) {
+			HttpSession session = request.getSession(false);
+			if (session != null) {
+				session.setAttribute("user", null);
+				dispatcher = request.getRequestDispatcher("/Home");
+			}
+		}
+		else {
+			dispatcher = request.getRequestDispatcher("/user/account.jsp");
+		}
 		dispatcher.forward(request, response);
-		
 	}
 
 	/**
@@ -45,15 +47,6 @@ public class UserAuth extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		User usr = new User();
-		if (usr.fetchUserFromDb(request.getParameter("username"), request.getParameter("password"))) {
-			HttpSession session = request.getSession();
-			session.setAttribute("user", usr);
-			response.sendRedirect("/jweb/User/Account");
-		}
-		else {
-			response.sendRedirect("/jweb/User/Login?authError=true");
-		}
 	}
 
 }

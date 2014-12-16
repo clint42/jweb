@@ -55,6 +55,7 @@ public class UserRegister extends HttpServlet {
 		String address = (String) request.getParameter("Address");
 		String country = (String) request.getParameter("country");
 		String city = (String) request.getParameter("City");
+		String zipcode = (String) request.getParameter("Zip Code");
 		
 		if (fname.equals("First Name") || lname.equals("Last Name") || login.equals("Login") ||
 			password.equals("Password") || email.equals("E-Mail") || address.equals("Address") ||
@@ -71,7 +72,7 @@ public class UserRegister extends HttpServlet {
 			request.getRequestDispatcher("/register.jsp").forward(request, response);						
 		}
 		else {
-			User new_user = new User(0, login, password, fname, lname, email, address, country, city);
+			User new_user = new User(0, login, password, fname, lname, email, address, country, city, zipcode);
 			new_user.saveToDb();
 			request.getRequestDispatcher("/").forward(request, response);			
 		}

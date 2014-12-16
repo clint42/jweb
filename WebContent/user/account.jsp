@@ -150,8 +150,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="login">
           	<div class="wrap">
 				<div class="col_1_of_login span_1_of_login">
-					<h4 class="title">New Customers</h4>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan</p>
+					<h4 class="title">Orders history</h4>
+					<p>No recent order.</p>
 					<div class="button1">
 					   <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
 					 </div>
