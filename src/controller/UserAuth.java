@@ -1,5 +1,7 @@
 package controller;
 
+import helper.FlashMessenger;
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -49,7 +51,12 @@ public class UserAuth extends HttpServlet {
 		if (usr.fetchUserFromDb(request.getParameter("username"), request.getParameter("password"))) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", usr);
-			response.sendRedirect("/jweb/User/Account");
+			if (usr.getRole().equals("A")) {
+				response.sendRedirect("/jweb/Admin/Home");
+			}
+			else {
+				response.sendRedirect("/jweb/User/Account");
+			}
 		}
 		else {
 			response.sendRedirect("/jweb/User/Login?authError=true");

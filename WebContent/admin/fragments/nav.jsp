@@ -206,12 +206,12 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="/jweb/User/Account"><i class="fa fa-user fa-fw"></i> View my profile on Lacob</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/jweb/User/Account?action=logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -235,16 +235,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a class="active" href="/jweb/Admin/Home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> News<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="/jweb/Admin/News">Add a news...</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="morris.html">See all news</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
