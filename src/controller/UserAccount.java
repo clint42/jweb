@@ -1,5 +1,7 @@
 package controller;
 
+import helper.FlashMessenger;
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -28,18 +30,20 @@ public class UserAccount extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = null;
 		if (request.getParameter("action") != null && request.getParameter("action").equals("logout")) {
 			HttpSession session = request.getSession(false);
 			if (session != null) {
 				session.setAttribute("user", null);
-				dispatcher = request.getRequestDispatcher("/Home");
+				FlashMessenger.getMessenger(session).addSuccessMessage("You have been logout");
+				response.sendRedirect("/jweb/Home");
 			}
 		}
 		else {
+			RequestDispatcher dispatcher = null;
 			dispatcher = request.getRequestDispatcher("/user/account.jsp");
+			dispatcher.forward(request, response);
 		}
-		dispatcher.forward(request, response);
+		
 	}
 
 	/**
