@@ -20,16 +20,17 @@
 			<div class="clear"></div>
  		</div>
 	</div>
+	<jsp:include page="/fragments/flashMessenger.jsp"/>
 	 <div class="header-bottom">
 	    <div class="wrap">
-	    <jsp:include page="fragments/menu.jsp"/>
+	    <jsp:include page="/fragments/menu.jsp"/>
      <div class="clear"></div>
      </div>
 	</div>
           <div class="register_account">
           	<div class="wrap">
     	      <h4 class="title">Create an Account</h4>
-    	      <p style="color:red"><%= request.getAttribute("error") %></p>
+<%--     	      <p style="color:red"><%= request.getAttribute("error") %></p> --%>
     		   <form method="post">
     			 <div class="col_1_of_2 span_1_of_2">
 		   			 	<div><input type="text" name="First Name" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}"></div>

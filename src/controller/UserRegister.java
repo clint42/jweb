@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.User;
+import helper.FlashMessenger;
 
 
 /**
@@ -39,16 +40,14 @@ public class UserRegister extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String registError = request.getParameter("registError");
-		if (registError == null || registError.equals("false"))
-			request.setAttribute("error", "");
-		request.getRequestDispatcher("/jweb/User/Register").forward(request, response);
+		request.getRequestDispatcher("/register.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		String fname = (String) request.getParameter("First Name");
 		String lname = (String) request.getParameter("Last Name");
 		String login = (String) request.getParameter("Login");
@@ -63,21 +62,23 @@ public class UserRegister extends HttpServlet {
 		if (fname.equals("First Name") || lname.equals("Last Name") || login.equals("Login") ||
 			password.equals("Password") || email.equals("E-Mail") || address.equals("Address") ||
 			country == null || city.equals("City") || zipcode.equals("Zip Code"))
-			request.setAttribute("error", "Error : You have to fill all the fields");
+			FlashMessenger.getMessenger(session).addErrorMessage("You have to fill all the fields");
 		else if (!password.equals(cpassword))
-			request.setAttribute("error", "Error : Password and Confirm Password don't match");
+			FlashMessenger.getMessenger(session).addErrorMessage("Password and Confirm Password don't match");
 		else if (!isEmailAddress(email))
-			request.setAttribute("error", "Error : You provide an invalid e-mail");
+			FlashMessenger.getMessenger(session).addErrorMessage("You provided an invalid e-mail");
 		else {
 			User new_user = new User(0, login, password, fname, lname, email, address, country, city, zipcode);
 			if (new_user.saveToDb()) {
-				HttpSession session = request.getSession();
+				System.out.println("Creation of the user succeed");
 				session.setAttribute("user", new_user);
 				response.sendRedirect("/jweb/User/Account");
 				return ;
 			}
-		request.getRequestDispatcher("/jweb/User/Register").forward(request, response);						
+			else
+				System.out.println("Creation of the user failed");
 		}
+		request.getRequestDispatcher("/register.jsp").forward(request, response);						
 		// TODO Auto-generated method stub
 	}
 

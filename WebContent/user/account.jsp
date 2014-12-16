@@ -1,90 +1,60 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Lacob | Account</title>
+<title>Lacob | Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
 <!-- start menu -->
 <link href="${pageContext.request.contextPath}/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!-- dropdown -->
 <script src="${pageContext.request.contextPath}/js/jquery.easydropdown.js"></script>
 </head>
-<body>
-    <div class="header-top">
-			<div class="wrap"> 
-			 <jsp:include page="/fragments/header.jsp"/>
+<body> 
+     <div class="header-top">
+	   <div class="wrap"> 
+			<jsp:include page="/fragments/header.jsp"/>
 			<div class="clear"></div>
  		</div>
-	 </div>
-	<div class="header-bottom">
+	</div>
+	<jsp:include page="/fragments/flashMessenger.jsp"/>
+	 <div class="header-bottom">
 	    <div class="wrap">
-			<jsp:include page="/fragments/menu.jsp"/>
+	    <jsp:include page="/fragments/menu.jsp"/>
      <div class="clear"></div>
      </div>
 	</div>
-        <div class="login">
+          <div class="register_account">
           	<div class="wrap">
-				<div class="col_1_of_login span_1_of_login">
-					<h4 class="title">Orders history</h4>
-					<p>No recent order.</p>
-					<div class="button1">
-					   <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
-					 </div>
-					 <div class="clear"></div>
-				</div>
-				<div class="col_1_of_login span_1_of_login">
-				<div class="login-title">
-	           		<h4 class="title">Registered Customers</h4>
-					<div id="loginbox" class="loginbox">
-						<form action="" method="post" name="login" id="login-form">
-						  <p style="color:red">
-						 	<%= request.getAttribute("error") %>
-						  </p>
-						  <fieldset class="input">
-						    <p id="login-form-username">
-						      <label for="username">Username</label>
-						      <input id="username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <p id="login-form-password">
-						      <label for="password">Password</label>
-						      <input id="password" type="password" name="password" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <div class="remember">
-							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
-							   </p>
-							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
-							 </div>
-						  </fieldset>
-						 </form>
-					</div>
-			    </div>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-     <div class="footer">
+    	      <h4 class="title">Create an Account</h4>
+<%--     	      <p style="color:red"><%= request.getAttribute("error") %></p> --%>
+    		   <form method="post">
+    			 <div class="col_1_of_2 span_1_of_2">
+		   			 	<div><input type="text" name="First Name" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}"></div>
+		    			<div><input type="text" name="Last Name" value="Last Name" onfocus="if (this.value == 'Last Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Last Name';}"></div>
+		    			<div><input type="text" name="Login" value="Login" onfocus="if (this.value == 'Login') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Login';}"></div>
+		    			<div><input type="text" name="Password" value="Password" onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}"></div>
+		    			<div><input type="text" name="Confirm Password" value="Confirm Password" onfocus="if (this.value == 'Confirm Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Confirm Password';}"></div>
+		    	 </div>
+		    <div class="clear"></div>
+		    </form>
+    	</div>
+    </div>
+    <div class="footer">
 		<div class="footer-top">
 			<div class="wrap">
 			  <div class="section group example">
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="${pageContext.request.contextPath}/images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
+					  <li><img src="images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="${pageContext.request.contextPath}/images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
+					  <li><img src="images/3.png"><span class="f-text">Call us! toll free-01 40 01 08 44 </span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
@@ -171,21 +141,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   </div>
 		  <div class="clear"></div>
 		    </div>
-		  </div>
+			</div>
 		</div>
 		<div class="footer-bottom">
 			<div class="wrap">
 	            <div class="copy">
 			           <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
-		        </div>
-			  <div class="f-list2">
+		       </div>
+		       <div class="f-list2">
 				<ul>
 					<li class="active"><a href="about.html">About Us</a></li> |
 					<li><a href="delivery.html">Delivery & Returns</a></li> |
 					<li><a href="delivery.html">Terms & Conditions</a></li> |
 					<li><a href="contact.html">Contact Us</a></li> 
-				</ul>
-			  </div>
+			    </ul>
+			   </div>
 				<div class="clear"></div>
 		      </div>
 			</div>
