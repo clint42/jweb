@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.User;
 
@@ -38,8 +39,10 @@ public class UserRegister extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setAttribute("error", "");
-		request.getRequestDispatcher("/register.jsp").forward(request, response);
+		String registError = request.getParameter("registError");
+		if (registError == null || registError.equals("false"))
+			request.setAttribute("error", "");
+		request.getRequestDispatcher("/jweb/User/Register").forward(request, response);
 	}
 
 	/**
@@ -59,22 +62,21 @@ public class UserRegister extends HttpServlet {
 		
 		if (fname.equals("First Name") || lname.equals("Last Name") || login.equals("Login") ||
 			password.equals("Password") || email.equals("E-Mail") || address.equals("Address") ||
-			country == null || city.equals("City") || zipcode.equals("Zip Code")) {
+			country == null || city.equals("City") || zipcode.equals("Zip Code"))
 			request.setAttribute("error", "Error : You have to fill all the fields");
-			request.getRequestDispatcher("/register.jsp").forward(request, response);
-		}
-		else if (!password.equals(cpassword)) {
+		else if (!password.equals(cpassword))
 			request.setAttribute("error", "Error : Password and Confirm Password don't match");
-			request.getRequestDispatcher("/register.jsp").forward(request, response);			
-		}
-		else if (!isEmailAddress(email)) {
+		else if (!isEmailAddress(email))
 			request.setAttribute("error", "Error : You provide an invalid e-mail");
-			request.getRequestDispatcher("/register.jsp").forward(request, response);						
-		}
 		else {
 			User new_user = new User(0, login, password, fname, lname, email, address, country, city, zipcode);
-			new_user.saveToDb();
-			request.getRequestDispatcher("/").forward(request, response);			
+			if (new_user.saveToDb()) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user", new_user);
+				response.sendRedirect("/jweb/User/Account");
+				return ;
+			}
+		request.getRequestDispatcher("/jweb/User/Register").forward(request, response);						
 		}
 		// TODO Auto-generated method stub
 	}
