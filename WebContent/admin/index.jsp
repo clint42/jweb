@@ -51,15 +51,13 @@ else {
 <body>
 	
 	<div id="wrapper">
-	 <!-- Navigation -->
-        <!-- Navigation -->
        <jsp:include page="/admin/fragments/nav.jsp"/>
         
             
        <div id="page-wrapper">
        		<div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Welcome, <%=  user.getFirstName() + + user.getLastName() %></h1>
+                    <h1 class="page-header">Welcome, <%=  user.getFirstName() + " " + user.getLastName() %></h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
