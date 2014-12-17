@@ -105,6 +105,14 @@ public class User {
 		return false;
 	}
 	
+	public String getUsername() {
+		return username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

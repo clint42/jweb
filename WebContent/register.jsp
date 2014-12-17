@@ -35,7 +35,7 @@
     			 <div class="col_1_of_2 span_1_of_2">
 		   			 	<div><input type="text" name="First Name" value="First Name" onfocus="if (this.value == 'First Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'First Name';}"></div>
 		    			<div><input type="text" name="Last Name" value="Last Name" onfocus="if (this.value == 'Last Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Last Name';}"></div>
-		    			<div><input type="text" name="Login" value="Login" onfocus="if (this.value == 'Login') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Login';}"></div>
+		    			<div><input type="text" name="Username" value="Username" onfocus="if (this.value == 'Username') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Username';}"></div>
 		    			<div><input type="text" name="Password" value="Password" onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}"></div>
 		    			<div><input type="text" name="Confirm Password" value="Confirm Password" onfocus="if (this.value == 'Confirm Password') {this.value = ''; this.type='password'}; "  onblur="if (this.value == '') {this.type='text'; this.value = 'Confirm Password';}"></div>
 		    	 </div>

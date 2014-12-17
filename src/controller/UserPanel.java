@@ -34,6 +34,9 @@ public class UserPanel extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		User user_info = (User) session.getAttribute("user");
+		System.out.println(user_info.getUsername());
 	}
 
 	/**

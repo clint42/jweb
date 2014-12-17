@@ -50,7 +50,7 @@ public class UserRegister extends HttpServlet {
 		HttpSession session = request.getSession();
 		String fname = (String) request.getParameter("First Name");
 		String lname = (String) request.getParameter("Last Name");
-		String login = (String) request.getParameter("Login");
+		String uname = (String) request.getParameter("Username");
 		String password = (String) request.getParameter("Password");
 		String cpassword = (String) request.getParameter("Confirm Password");
 		String email = (String) request.getParameter("E-Mail");
@@ -59,7 +59,7 @@ public class UserRegister extends HttpServlet {
 		String city = (String) request.getParameter("City");
 		String zipcode = (String) request.getParameter("Zip Code");
 		
-		if (fname.equals("First Name") || lname.equals("Last Name") || login.equals("Login") ||
+		if (fname.equals("First Name") || lname.equals("Last Name") || uname.equals("Login") ||
 			password.equals("Password") || email.equals("E-Mail") || address.equals("Address") ||
 			country == null || city.equals("City") || zipcode.equals("Zip Code"))
 			FlashMessenger.getMessenger(session).addErrorMessage("You have to fill all the fields");
@@ -68,7 +68,7 @@ public class UserRegister extends HttpServlet {
 		else if (!isEmailAddress(email))
 			FlashMessenger.getMessenger(session).addErrorMessage("You provided an invalid e-mail");
 		else {
-			User new_user = new User(0, login, password, fname, lname, email, address, country, city, zipcode);
+			User new_user = new User(0, uname, password, fname, lname, email, address, country, city, zipcode);
 			if (new_user.saveToDb()) {
 				System.out.println("Creation of the user succeed");
 				session.setAttribute("user", new_user);
@@ -79,7 +79,6 @@ public class UserRegister extends HttpServlet {
 				System.out.println("Creation of the user failed");
 		}
 		request.getRequestDispatcher("/register.jsp").forward(request, response);						
-		// TODO Auto-generated method stub
 	}
 
 }

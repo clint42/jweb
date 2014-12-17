@@ -35,9 +35,7 @@
 				<div class="col_1_of_2 span_1_of_2">
 					<h5 class="title">First name</h5>
 					<div>
-						<input type="text" name="First Name" value="First Name"
-							onfocus="if (this.value == 'First Name') {this.value = '';}"
-							onblur="if (this.value == '') {this.value = 'First Name';}" disabled>
+						<input type="text" name="First Name" value="First Name" disabled>
 					</div>
 					<h5 class="title">Last name</h5>
 					<div>
@@ -45,11 +43,9 @@
 							onfocus="if (this.value == 'Last Name') {this.value = '';}"
 							onblur="if (this.value == '') {this.value = 'Last Name';}" disabled>
 					</div>
-					<h5 class="title">Login</h5>
+					<h5 class="title">Username</h5>
 					<div>
-						<input type="text" name="Login" value="Login"
-							onfocus="if (this.value == 'Login') {this.value = '';}"
-							onblur="if (this.value == '') {this.value = 'Login';}" disabled>
+						<input type="text" name="Username" value="Username" disabled>
 					</div>
 					<h5 class="title">Password</h5>
 					<div>
