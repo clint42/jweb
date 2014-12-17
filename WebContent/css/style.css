@@ -949,6 +949,17 @@ h4.title{
 	border-bottom: 1px solid #DFDDDD;
 	padding-bottom: 13px;
 }
+
+h5.title {
+	color: #555;
+	line-height: 1.2;
+	font-weight: normal;
+	margin-top: 0px;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+}
+
 input.inputbox, input.required, div.k2AccountPage input[type="text"] {
 	background: #FFF;
 	border: 1px solid #BDBCBC;
@@ -1014,6 +1025,13 @@ fieldset.input input[type="submit"]:hover, .button1 input[type="submit"]:hover{
 	margin-top: 6%;
 }
 /*--register-form--*/
+
+.account_form input[type="text"], .account_form select {
+	width:150% !important;
+	margin-left:5% !important;
+	margin-bottom:5% !important;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -1051,6 +1069,7 @@ table {
 .register_account form input[type="text"].number {
 	width: 69.8%;
 }
+
 p.terms a, p.note a {
 	text-decoration: underline;
 	color:#555;

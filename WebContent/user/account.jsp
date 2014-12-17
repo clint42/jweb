@@ -1,309 +1,429 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Leoshop Website Template | Login :: w3layouts</title>
+<title>Lacob | Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
 <!-- start menu -->
 <link href="${pageContext.request.contextPath}/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!-- dropdown -->
 <script src="${pageContext.request.contextPath}/js/jquery.easydropdown.js"></script>
 </head>
 <body>
-    <div class="header-top">
-			<div class="wrap"> 
-			 <jsp:include page="/fragments/header.jsp"/>
+	<div class="header-top">
+		<div class="wrap">
+			<jsp:include page="/fragments/header.jsp" />
 			<div class="clear"></div>
- 		</div>
-	 </div>
-	<div class="header-bottom">
-	    <div class="wrap">
-			<div class="header-bottom-left">
-				<div class="logo">
-					<a href="index.html"><img src="${pageContext.request.contextPath}/images/logo.png" alt=""/></a>
-				</div>
-				<div class="menu">
-	            <ul class="megamenu skyblue">
-			<li class="active grid"><a href="index.html">Home</a></li>
-			<li><a class="color4" href="#">women</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Contact Lenses</h4>
-								<ul>
-									<li><a href="womens.html">Daily-wear soft lenses</a></li>
-									<li><a href="womens.html">Extended-wear</a></li>
-									<li><a href="womens.html">Lorem ipsum </a></li>
-									<li><a href="womens.html">Planned replacement</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sun Glasses</h4>
-								<ul>
-									<li><a href="womens.html">Heart-Shaped</a></li>
-									<li><a href="womens.html">Square-Shaped</a></li>
-									<li><a href="womens.html">Round-Shaped</a></li>
-									<li><a href="womens.html">Oval-Shaped</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Eye Glasses</h4>
-								<ul>
-									<li><a href="womens.html">Anti Reflective</a></li>
-									<li><a href="womens.html">Aspheric</a></li>
-									<li><a href="womens.html">Bifocal</a></li>
-									<li><a href="womens.html">Hi-index</a></li>
-									<li><a href="womens.html">Progressive</a></li>
-								</ul>	
-							</div>												
-						</div>
-					  </div>
-					</div>
-				</li>				
-				<li><a class="color5" href="#">Men</a>
-				<div class="megapanel">
-					<div class="col1">
-							<div class="h_nav">
-								<h4>Contact Lenses</h4>
-								<ul>
-									<li><a href="mens.html">Daily-wear soft lenses</a></li>
-									<li><a href="mens.html">Extended-wear</a></li>
-									<li><a href="mens.html">Lorem ipsum </a></li>
-									<li><a href="mens.html">Planned replacement</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Sun Glasses</h4>
-								<ul>
-									<li><a href="mens.html">Heart-Shaped</a></li>
-									<li><a href="mens.html">Square-Shaped</a></li>
-									<li><a href="mens.html">Round-Shaped</a></li>
-									<li><a href="mens.html">Oval-Shaped</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Eye Glasses</h4>
-								<ul>
-									<li><a href="mens.html">Anti Reflective</a></li>
-									<li><a href="mens.html">Aspheric</a></li>
-									<li><a href="mens.html">Bifocal</a></li>
-									<li><a href="mens.html">Hi-index</a></li>
-									<li><a href="mens.html">Progressive</a></li>
-								</ul>	
-							</div>												
-						</div>
-					</div>
-				</li>
-				<li><a class="color6" href="other.html">Other</a></li>
-				<li><a class="color7" href="other.html">Purchase</a></li>
-			</ul>
-			</div>
 		</div>
-	   <div class="header-bottom-right">
-         <div class="search">	  
-				<input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-				<input type="submit" value="Subscribe" id="submit" name="submit">
-				<div id="response"> </div>
-		 </div>
-	  <div class="tag-list">
-	    <ul class="icon1 sub-icon1 profile_img">
-			<li><a class="active-icon c1" href="#"> </a>
-				<ul class="sub-icon1 list">
-					<li><h3>sed diam nonummy</h3><a href=""></a></li>
-					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
-				</ul>
-			</li>
-		</ul>
-		<ul class="icon1 sub-icon1 profile_img">
-			<li><a class="active-icon c2" href="#"> </a>
-				<ul class="sub-icon1 list">
-					<li><h3>No Products</h3><a href=""></a></li>
-					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
-				</ul>
-			</li>
-		</ul>
-	    <ul class="last"><li><a href="#">Cart(0)</a></li></ul>
-	  </div>
-    </div>
-     <div class="clear"></div>
-     </div>
 	</div>
-        <div class="login">
-          	<div class="wrap">
-				<div class="col_1_of_login span_1_of_login">
-					<h4 class="title">Orders history</h4>
-					<p>No recent order.</p>
-					<div class="button1">
-					   <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
-					 </div>
-					 <div class="clear"></div>
-				</div>
-				<div class="col_1_of_login span_1_of_login">
-				<div class="login-title">
-	           		<h4 class="title">Registered Customers</h4>
-					<div id="loginbox" class="loginbox">
-						<form action="" method="post" name="login" id="login-form">
-						  <p style="color:red">
-						 	<%= request.getAttribute("error") %>
-						  </p>
-						  <fieldset class="input">
-						    <p id="login-form-username">
-						      <label for="username">Username</label>
-						      <input id="username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <p id="login-form-password">
-						      <label for="password">Password</label>
-						      <input id="password" type="password" name="password" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <div class="remember">
-							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
-							   </p>
-							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
-							 </div>
-						  </fieldset>
-						 </form>
+	<jsp:include page="/fragments/flashMessenger.jsp" />
+	<div class="header-bottom">
+		<div class="wrap">
+			<jsp:include page="/fragments/menu.jsp" />
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="register_account">
+		<div class="wrap">
+			<h4 class="title">Account</h4>
+			<%--     	      <p style="color:red"><%= request.getAttribute("error") %></p> --%>
+			<form class="account_form" method="post">
+				<div class="col_1_of_2 span_1_of_2">
+					<h5 class="title">First name</h5>
+					<div>
+						<input type="text" name="First Name" value="First Name"
+							onfocus="if (this.value == 'First Name') {this.value = '';}"
+							onblur="if (this.value == '') {this.value = 'First Name';}" disabled>
 					</div>
-			    </div>
+					<h5 class="title">Last name</h5>
+					<div>
+						<input type="text" name="Last Name" value="Last Name"
+							onfocus="if (this.value == 'Last Name') {this.value = '';}"
+							onblur="if (this.value == '') {this.value = 'Last Name';}" disabled>
+					</div>
+					<h5 class="title">Login</h5>
+					<div>
+						<input type="text" name="Login" value="Login"
+							onfocus="if (this.value == 'Login') {this.value = '';}"
+							onblur="if (this.value == '') {this.value = 'Login';}" disabled>
+					</div>
+					<h5 class="title">Password</h5>
+					<div>
+						<input type="text" name="Password" value="Password"
+							onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "
+							onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}">
+					</div>
+					<h5 class="title">Confirm Password</h5>
+					<div>
+						<input type="text" name="Confirm Password"
+							value="Confirm Password"
+							onfocus="if (this.value == 'Confirm Password') {this.value = ''; this.type='password'}; "
+							onblur="if (this.value == '') {this.type='text'; this.value = 'Confirm Password';}">
+					</div>
+					<h5 class="title">Country</h5>
+					<div>
+						<select id="country" name="country"
+							onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Select a Country</option>
+							<option value="AX">Åland Islands</option>
+							<option value="AF">Afghanistan</option>
+							<option value="AL">Albania</option>
+							<option value="DZ">Algeria</option>
+							<option value="AS">American Samoa</option>
+							<option value="AD">Andorra</option>
+							<option value="AO">Angola</option>
+							<option value="AI">Anguilla</option>
+							<option value="AQ">Antarctica</option>
+							<option value="AG">Antigua And Barbuda</option>
+							<option value="AR">Argentina</option>
+							<option value="AM">Armenia</option>
+							<option value="AW">Aruba</option>
+							<option value="AU">Australia</option>
+							<option value="AT">Austria</option>
+							<option value="AZ">Azerbaijan</option>
+							<option value="BS">Bahamas</option>
+							<option value="BH">Bahrain</option>
+							<option value="BD">Bangladesh</option>
+							<option value="BB">Barbados</option>
+							<option value="BY">Belarus</option>
+							<option value="BE">Belgium</option>
+							<option value="BZ">Belize</option>
+							<option value="BJ">Benin</option>
+							<option value="BM">Bermuda</option>
+							<option value="BT">Bhutan</option>
+							<option value="BO">Bolivia</option>
+							<option value="BA">Bosnia and Herzegovina</option>
+							<option value="BW">Botswana</option>
+							<option value="BV">Bouvet Island</option>
+							<option value="BR">Brazil</option>
+							<option value="IO">British Indian Ocean Territory</option>
+							<option value="BN">Brunei</option>
+							<option value="BG">Bulgaria</option>
+							<option value="BF">Burkina Faso</option>
+							<option value="BI">Burundi</option>
+							<option value="KH">Cambodia</option>
+							<option value="CM">Cameroon</option>
+							<option value="CA">Canada</option>
+							<option value="CV">Cape Verde</option>
+							<option value="KY">Cayman Islands</option>
+							<option value="CF">Central African Republic</option>
+							<option value="TD">Chad</option>
+							<option value="CL">Chile</option>
+							<option value="CN">China</option>
+							<option value="CX">Christmas Island</option>
+							<option value="CC">Cocos (Keeling) Islands</option>
+							<option value="CO">Colombia</option>
+							<option value="KM">Comoros</option>
+							<option value="CG">Congo</option>
+							<option value="CD">Congo, Democractic Republic</option>
+							<option value="CK">Cook Islands</option>
+							<option value="CR">Costa Rica</option>
+							<option value="CI">Cote D'Ivoire (Ivory Coast)</option>
+							<option value="HR">Croatia (Hrvatska)</option>
+							<option value="CU">Cuba</option>
+							<option value="CY">Cyprus</option>
+							<option value="CZ">Czech Republic</option>
+							<option value="DK">Denmark</option>
+							<option value="DJ">Djibouti</option>
+							<option value="DM">Dominica</option>
+							<option value="DO">Dominican Republic</option>
+							<option value="TP">East Timor</option>
+							<option value="EC">Ecuador</option>
+							<option value="EG">Egypt</option>
+							<option value="SV">El Salvador</option>
+							<option value="GQ">Equatorial Guinea</option>
+							<option value="ER">Eritrea</option>
+							<option value="EE">Estonia</option>
+							<option value="ET">Ethiopia</option>
+							<option value="FK">Falkland Islands (Islas Malvinas)</option>
+							<option value="FO">Faroe Islands</option>
+							<option value="FJ">Fiji Islands</option>
+							<option value="FI">Finland</option>
+							<option value="FR">France</option>
+							<option value="FX">France, Metropolitan</option>
+							<option value="GF">French Guiana</option>
+							<option value="PF">French Polynesia</option>
+							<option value="TF">French Southern Territories</option>
+							<option value="GA">Gabon</option>
+							<option value="GM">Gambia, The</option>
+							<option value="GE">Georgia</option>
+							<option value="DE">Germany</option>
+							<option value="GH">Ghana</option>
+							<option value="GI">Gibraltar</option>
+							<option value="GR">Greece</option>
+							<option value="GL">Greenland</option>
+							<option value="GD">Grenada</option>
+							<option value="GP">Guadeloupe</option>
+							<option value="GU">Guam</option>
+							<option value="GT">Guatemala</option>
+							<option value="GG">Guernsey</option>
+							<option value="GN">Guinea</option>
+							<option value="GW">Guinea-Bissau</option>
+							<option value="GY">Guyana</option>
+							<option value="HT">Haiti</option>
+							<option value="HM">Heard and McDonald Islands</option>
+							<option value="HN">Honduras</option>
+							<option value="HK">Hong Kong S.A.R.</option>
+							<option value="HU">Hungary</option>
+							<option value="IS">Iceland</option>
+							<option value="IN">India</option>
+							<option value="ID">Indonesia</option>
+							<option value="IR">Iran</option>
+							<option value="IQ">Iraq</option>
+							<option value="IE">Ireland</option>
+							<option value="IM">Isle of Man</option>
+							<option value="IL">Israel</option>
+							<option value="IT">Italy</option>
+							<option value="JM">Jamaica</option>
+							<option value="JP">Japan</option>
+							<option value="JE">Jersey</option>
+							<option value="JO">Jordan</option>
+							<option value="KZ">Kazakhstan</option>
+							<option value="KE">Kenya</option>
+							<option value="KI">Kiribati</option>
+							<option value="KR">Korea</option>
+							<option value="KP">Korea, North</option>
+							<option value="KW">Kuwait</option>
+							<option value="KG">Kyrgyzstan</option>
+							<option value="LA">Laos</option>
+							<option value="LV">Latvia</option>
+							<option value="LB">Lebanon</option>
+							<option value="LS">Lesotho</option>
+							<option value="LR">Liberia</option>
+							<option value="LY">Libya</option>
+							<option value="LI">Liechtenstein</option>
+							<option value="LT">Lithuania</option>
+							<option value="LU">Luxembourg</option>
+							<option value="MO">Macau S.A.R.</option>
+							<option value="MK">Macedonia</option>
+							<option value="MG">Madagascar</option>
+							<option value="MW">Malawi</option>
+							<option value="MY">Malaysia</option>
+							<option value="MV">Maldives</option>
+							<option value="ML">Mali</option>
+							<option value="MT">Malta</option>
+							<option value="MH">Marshall Islands</option>
+							<option value="MQ">Martinique</option>
+							<option value="MR">Mauritania</option>
+							<option value="MU">Mauritius</option>
+							<option value="YT">Mayotte</option>
+							<option value="MX">Mexico</option>
+							<option value="FM">Micronesia</option>
+							<option value="MD">Moldova</option>
+							<option value="MC">Monaco</option>
+							<option value="MN">Mongolia</option>
+							<option value="ME">Montenegro</option>
+							<option value="MS">Montserrat</option>
+							<option value="MA">Morocco</option>
+							<option value="MZ">Mozambique</option>
+							<option value="MM">Myanmar</option>
+							<option value="NA">Namibia</option>
+							<option value="NR">Nauru</option>
+							<option value="NP">Nepal</option>
+							<option value="NL">Netherlands</option>
+							<option value="AN">Netherlands Antilles</option>
+							<option value="NC">New Caledonia</option>
+							<option value="NZ">New Zealand</option>
+							<option value="NI">Nicaragua</option>
+							<option value="NE">Niger</option>
+							<option value="NG">Nigeria</option>
+							<option value="NU">Niue</option>
+							<option value="NF">Norfolk Island</option>
+							<option value="MP">Northern Mariana Islands</option>
+							<option value="NO">Norway</option>
+							<option value="OM">Oman</option>
+							<option value="PK">Pakistan</option>
+							<option value="PW">Palau</option>
+							<option value="PS">Palestinian Territory, Occupied</option>
+							<option value="PA">Panama</option>
+							<option value="PG">Papua new Guinea</option>
+							<option value="PY">Paraguay</option>
+							<option value="PE">Peru</option>
+							<option value="PH">Philippines</option>
+							<option value="PN">Pitcairn Island</option>
+							<option value="PL">Poland</option>
+							<option value="PT">Portugal</option>
+							<option value="PR">Puerto Rico</option>
+							<option value="QA">Qatar</option>
+							<option value="RE">Reunion</option>
+							<option value="RO">Romania</option>
+							<option value="RU">Russia</option>
+							<option value="RW">Rwanda</option>
+							<option value="SH">Saint Helena</option>
+							<option value="KN">Saint Kitts And Nevis</option>
+							<option value="LC">Saint Lucia</option>
+							<option value="PM">Saint Pierre and Miquelon</option>
+							<option value="VC">Saint Vincent And The Grenadines</option>
+							<option value="WS">Samoa</option>
+							<option value="SM">San Marino</option>
+							<option value="ST">Sao Tome and Principe</option>
+							<option value="SA">Saudi Arabia</option>
+							<option value="SN">Senegal</option>
+						</select>
+					</div>
+					<h5 class="title">City</h5>
+					<div>
+						<input type="text" name="City" value="City"
+							onfocus="if (this.value == 'City') {this.value = '';}"
+							onblur="if (this.value == '') {this.value = 'City';}">
+					</div>
+					<h5 class="title">Zip Code</h5>
+					<div>
+						<input type="text" name="Zip Code" value="Zip Code"
+							onfocus="if (this.value == 'Zip Code') {this.value = '';}"
+							onblur="if (this.value == '') {this.value = 'Zip Code';}">
+					</div>
 				</div>
 				<div class="clear"></div>
-			</div>
+			</form>
 		</div>
-     <div class="footer">
+	</div>
+	<div class="footer">
 		<div class="footer-top">
 			<div class="wrap">
-			  <div class="section group example">
-				<div class="col_1_of_2 span_1_of_2">
-					<ul class="f-list">
-					  <li><img src="${pageContext.request.contextPath}/images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
-					</ul>
+				<div class="section group example">
+					<div class="col_1_of_2 span_1_of_2">
+						<ul class="f-list">
+							<li><img src="images/2.png"><span class="f-text">Free
+									Shipping on orders over $ 100</span>
+							<div class="clear"></div></li>
+						</ul>
+					</div>
+					<div class="col_1_of_2 span_1_of_2">
+						<ul class="f-list">
+							<li><img src="images/3.png"><span class="f-text">Call
+									us! toll free-01 40 01 08 44 </span>
+							<div class="clear"></div></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
 				</div>
-				<div class="col_1_of_2 span_1_of_2">
-					<ul class="f-list">
-					  <li><img src="${pageContext.request.contextPath}/images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
-					</ul>
-				</div>
-				<div class="clear"></div>
-		      </div>
 			</div>
 		</div>
 		<div class="footer-middle">
 			<div class="wrap">
-			 <div class="section group example">
-			  <div class="col_1_of_f_1 span_1_of_f_1">
-				 <div class="section group example">
-				   <div class="col_1_of_f_2 span_1_of_f_2">
-				      <h3>Facebook</h3>
-						<script>(function(d, s, id) {
+				<div class="section group example">
+					<div class="col_1_of_f_1 span_1_of_f_1">
+						<div class="section group example">
+							<div class="col_1_of_f_2 span_1_of_f_2">
+								<h3>Facebook</h3>
+								<script>(function(d, s, id) {
 						  var js, fjs = d.getElementsByTagName(s)[0];
 						  if (d.getElementById(id)) return;
 						  js = d.createElement(s); js.id = id;
 						  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
 						  fjs.parentNode.insertBefore(js, fjs);
 						}(document, 'script', 'facebook-jssdk'));</script>
-						<div class="like_box">	
-							<div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+								<div class="like_box">
+									<div class="fb-like-box"
+										data-href="http://www.facebook.com/w3layouts"
+										data-colorscheme="light" data-show-faces="true"
+										data-header="true" data-stream="false" data-show-border="true"></div>
+								</div>
+							</div>
+							<div class="col_1_of_f_2 span_1_of_f_2">
+								<h3>From Twitter</h3>
+								<div class="recent-tweet">
+									<div class="recent-tweet-icon">
+										<span> </span>
+									</div>
+									<div class="recent-tweet-info">
+										<p>
+											Ds which don't look even slightly believable. If you are <a
+												href="#">going to use nibh euismod</a> tincidunt ut laoreet
+											adipisicing
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="recent-tweet">
+									<div class="recent-tweet-icon">
+										<span> </span>
+									</div>
+									<div class="recent-tweet-info">
+										<p>
+											Ds which don't look even slightly believable. If you are <a
+												href="#">going to use nibh euismod</a> tincidunt ut laoreet
+											adipisicing
+										</p>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
 						</div>
- 				  </div>
-				  <div class="col_1_of_f_2 span_1_of_f_2">
-						<h3>From Twitter</h3>
-				       <div class="recent-tweet">
-							<div class="recent-tweet-icon">
-								<span> </span>
+					</div>
+					<div class="col_1_of_f_1 span_1_of_f_1">
+						<div class="section group example">
+							<div class="col_1_of_f_2 span_1_of_f_2">
+								<h3>Information</h3>
+								<ul class="f-list1">
+									<li><a href="#">Duis autem vel eum iriure </a></li>
+									<li><a href="#">anteposuerit litterarum formas </a></li>
+									<li><a href="#">Tduis dolore te feugait nulla</a></li>
+									<li><a href="#">Duis autem vel eum iriure </a></li>
+									<li><a href="#">anteposuerit litterarum formas </a></li>
+									<li><a href="#">Tduis dolore te feugait nulla</a></li>
+								</ul>
 							</div>
-							<div class="recent-tweet-info">
-								<p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
+							<div class="col_1_of_f_2 span_1_of_f_2">
+								<h3>Contact us</h3>
+								<div class="company_address">
+									<p>500 Lorem Ipsum Dolor Sit,</p>
+									<p>22-56-2-9 Sit Amet, Lorem,</p>
+									<p>USA</p>
+									<p>Phone:(00) 222 666 444</p>
+									<p>Fax: (000) 000 00 00 0</p>
+									<p>
+										Email: <span>mail[at]leoshop.com</span>
+									</p>
+
+								</div>
+								<div class="social-media">
+									<ul>
+										<li><span class="simptip-position-bottom simptip-movable"
+											data-tooltip="Google"><a href="#" target="_blank">
+											</a></span></li>
+										<li><span class="simptip-position-bottom simptip-movable"
+											data-tooltip="Linked in"><a href="#" target="_blank">
+											</a> </span></li>
+										<li><span class="simptip-position-bottom simptip-movable"
+											data-tooltip="Rss"><a href="#" target="_blank"> </a></span></li>
+										<li><span class="simptip-position-bottom simptip-movable"
+											data-tooltip="Facebook"><a href="#" target="_blank">
+											</a></span></li>
+									</ul>
+								</div>
 							</div>
-							<div class="clear"> </div>
-					   </div>
-					   <div class="recent-tweet">
-							<div class="recent-tweet-icon">
-								<span> </span>
-							</div>
-							<div class="recent-tweet-info">
-								<p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-							</div>
-							<div class="clear"> </div>
-					  </div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
 				</div>
-				<div class="clear"></div>
-		      </div>
- 			 </div>
-			 <div class="col_1_of_f_1 span_1_of_f_1">
-			   <div class="section group example">
-				 <div class="col_1_of_f_2 span_1_of_f_2">
-				    <h3>Information</h3>
-						<ul class="f-list1">
-						    <li><a href="#">Duis autem vel eum iriure </a></li>
-				            <li><a href="#">anteposuerit litterarum formas </a></li>
-				            <li><a href="#">Tduis dolore te feugait nulla</a></li>
-				             <li><a href="#">Duis autem vel eum iriure </a></li>
-				            <li><a href="#">anteposuerit litterarum formas </a></li>
-				            <li><a href="#">Tduis dolore te feugait nulla</a></li>
-			         	</ul>
- 				 </div>
-				 <div class="col_1_of_f_2 span_1_of_f_2">
-				   <h3>Contact us</h3>
-						<div class="company_address">
-					                <p>500 Lorem Ipsum Dolor Sit,</p>
-							   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-							   		<p>USA</p>
-					   		<p>Phone:(00) 222 666 444</p>
-					   		<p>Fax: (000) 000 00 00 0</p>
-					 	 	<p>Email: <span>mail[at]leoshop.com</span></p>
-					   		
-					   </div>
-					   <div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Google"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Linked in"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Rss"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Facebook"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
-				</div>
-				<div class="clear"></div>
-		    </div>
-		   </div>
-		  <div class="clear"></div>
-		    </div>
-		  </div>
+			</div>
 		</div>
 		<div class="footer-bottom">
 			<div class="wrap">
-	            <div class="copy">
-			           <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
-		        </div>
-			  <div class="f-list2">
-				<ul>
-					<li class="active"><a href="about.html">About Us</a></li> |
-					<li><a href="delivery.html">Delivery & Returns</a></li> |
-					<li><a href="delivery.html">Terms & Conditions</a></li> |
-					<li><a href="contact.html">Contact Us</a></li> 
-				</ul>
-			  </div>
+				<div class="copy">
+					<p>
+						© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a>
+					</p>
+				</div>
+				<div class="f-list2">
+					<ul>
+						<li class="active"><a href="about.html">About Us</a></li> |
+						<li><a href="delivery.html">Delivery & Returns</a></li> |
+						<li><a href="delivery.html">Terms & Conditions</a></li> |
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</div>
 				<div class="clear"></div>
-		      </div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>
