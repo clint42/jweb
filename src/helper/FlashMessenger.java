@@ -17,7 +17,7 @@ public class FlashMessenger {
 	}
 	
 	static public FlashMessenger getMessenger(HttpSession session) {
-		if (instance == null) {
+		if (instance == null || instance.session != session) {
 			instance = new FlashMessenger(session);
 		}
 		return instance;

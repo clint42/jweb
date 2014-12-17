@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.HashMap" %>
+    pageEncoding="ISO-8859-1" import="java.util.ArrayList, model.News" %>
 <%
-HashMap<String, String> formValues = new HashMap<String, String>();
-if (request.getAttribute("formValues") != null && request.getAttribute("formValues") instanceof HashMap<?, ?>) {
-	formValues = (HashMap<String, String>)(request.getAttribute("formValues"));
+ArrayList<News> newsArray = new ArrayList<News>();
+if (request.getAttribute("newsArray") != null && request.getAttribute("newsArray") instanceof ArrayList<?>) {
+	newsArray = (ArrayList<News>)(request.getAttribute("newsArray"));
 }
 %>
 <!DOCTYPE html>
@@ -55,23 +55,55 @@ if (request.getAttribute("formValues") != null && request.getAttribute("formValu
 			</div>
 			<div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">News edition</h1>
+                    <h1 class="page-header">All news</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
 			<div class="row">
                 <div class="col-lg-12">
-					<form method="POST" role="form">
-					<div class="form-group">
-						<label for="title">Title</label>
-						<input name="title" type="text" class="form-control" id="title" placeholder="Title" value="<%= formValues.get("title") %>">
-					</div>
-					<div class="form-group">
-						<label for="content">Content</label>
-						<textarea name="content" id="content" class="form-control" placeholder="Enter your text here..."><%= formValues.get("content") %></textarea>
-					</div>
-					<input type="submit" name="publish" value="Publish" class="btn btn-default">
-				</form>
+					<%
+					if (newsArray.size() > 0) {
+					%>
+					<table class="table">
+						<thead>
+						<tr>
+							<th>Title</th>
+							<th>Content</th>
+							<th>Created By</th>
+							<th>Created Date</th>
+							<th>Actions</th>
+						</tr>
+						</thead>
+						
+						<tbody>
+							<%
+							for (News news : newsArray) {
+								%>
+								<tr>
+								<td><%= news.getTitle() %></td>
+								<td><%= news.getContent() %></td>
+								<td><%= news.getCreatedBy() %></td>
+								<td><%= news.getCreatedDate() %></td>
+								<td>
+								<div class="btn-group" role="group">
+								<a href="/jweb/Admin/News/Edit/<%= news.getId() %>" title="Edit this news" class="btn btn-small btn-primary"><span class="fa fa-edit"></span></a>
+								<a href="/jweb/Admin/News/Delete/<%= news.getId() %>" title="Delete this news" class="btn btn-small btn-danger"><span class="fa fa-remove"></span></a>
+								</div>
+								</td>
+								</tr>
+								<%
+							}
+							%>
+						</tbody>
+					</table>
+					<%
+					}
+					else {
+					%>
+					<p style="color:red">No news</p>
+					<%
+					}
+					%>
 			</div>
 			</div>
 		</div>

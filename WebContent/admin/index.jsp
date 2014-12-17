@@ -20,7 +20,7 @@ else {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Lacob - Admin Dashboard</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
@@ -55,6 +55,11 @@ else {
         
             
        <div id="page-wrapper">
+       		<div class="row">
+				<div class="col-lg-12">
+					<jsp:include page="/fragments/flashMessenger.jsp"/>
+				</div>
+			</div>
        		<div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Welcome, <%=  user.getFirstName() + " " + user.getLastName() %></h1>

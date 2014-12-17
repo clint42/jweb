@@ -55,10 +55,12 @@ public class AdminFilter implements Filter {
 					}
 				}
 				else {
+					FlashMessenger.getMessenger(session).addErrorMessage("You are not connected");
 					httpResp.sendRedirect("/jweb/User/Login");
 				}
 			}
 			else {
+				FlashMessenger.getMessenger(httpReq.getSession()).addErrorMessage("You are not connected");
 				httpResp.sendRedirect("/jweb/User/Login");
 			}
 		}

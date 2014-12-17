@@ -1,5 +1,7 @@
 package filter;
 
+import helper.FlashMessenger;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -45,6 +47,7 @@ public class UserFilter implements Filter {
 			HttpSession session = httpRequest.getSession(false);
 			if (!lastSegment.equals("Login") && !lastSegment.equals("Register")) {
 				if (session == null) {
+					FlashMessenger.getMessenger(httpRequest.getSession()).addErrorMessage("You are not connected");
 					httpResponse.sendRedirect("/jweb/User/Login");
 				}
 				else {
@@ -52,6 +55,7 @@ public class UserFilter implements Filter {
 						chain.doFilter(request, response);
 					}
 					else {
+						FlashMessenger.getMessenger(session).addErrorMessage("You are not connected");
 						httpResponse.sendRedirect("/jweb/User/Login");
 					}
 				}
