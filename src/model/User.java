@@ -116,4 +116,8 @@ public class User {
 	public String getRole() {
 		return role;
 	}
+	
+	public int getId() {
+		return id;
+	}
 }

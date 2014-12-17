@@ -241,7 +241,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> News<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/jweb/Admin/News">Add a news...</a>
+                                    <a href="/jweb/Admin/News/Add">Add a news...</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">See all news</a>

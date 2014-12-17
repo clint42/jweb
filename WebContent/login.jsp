@@ -26,6 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="clear"></div>
  		</div>
 	 </div>
+	 <jsp:include page="/fragments/flashMessenger.jsp"/>
 	<div class="header-bottom">
 	    <div class="wrap">
 			<jsp:include page="/fragments/menu.jsp"/>
