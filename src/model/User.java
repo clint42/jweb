@@ -81,7 +81,7 @@ public class User {
 			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail, address, city, country, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt;
 			try {
-				stmt = conn.prepareStatement(query);
+				stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 				stmt.setString(1, this.username);
 				stmt.setString(2, this.password);
 				stmt.setString(3, this.firstName);
@@ -92,7 +92,7 @@ public class User {
 				stmt.setString(8, this.city);
 				stmt.setString(9, this.country);
 				stmt.setString(10, this.zipcode);
-				if (stmt.execute()) {
+				if (stmt.executeUpdate() > 0) {
 					return true;
 				}
 				return false;
