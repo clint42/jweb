@@ -2,11 +2,14 @@ package controller;
 
 import helper.FlashMessenger;
 
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 
 import model.News;
 import model.User;
@@ -35,10 +39,10 @@ public class AdminNews extends HttpServlet {
         getActions.put("edit", (request, response) -> { this.editGetAction(request, response); });
         getActions.put("add", (request, response) -> { this.addGetAction(request, response); });
         getActions.put("delete", (request, response) -> { this.deleteGetAction(request, response); });
+        getActions.put("show", (request, response) -> { this.showListAction(request, response); });
         postActions.put("edit", (request, response) -> { this.editPostAction(request, response); });
         postActions.put("add", (request, response) -> { this.addPostAction(request, response); });
-        postActions.put("delete", (request, response) -> { this.deletePostAction(request, response); });
-        // TODO Auto-generated constructor stub
+         // TODO Auto-generated constructor stub
     }
 
 	private void addGetAction(HttpServletRequest request, HttpServletResponse response) {
@@ -81,7 +85,6 @@ public class AdminNews extends HttpServlet {
 					try {
 						response.sendRedirect("/jweb/Admin/News/Add");
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -92,10 +95,60 @@ public class AdminNews extends HttpServlet {
 	}
 	
 	private void deleteGetAction(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		
+		String uri = request.getPathInfo();
+		String[] segments = uri.split("/");
+		if (segments.length > 2) {
+			try {
+				int id = Integer.parseInt(segments[2]);
+				News news = new News();
+				if (news.fetchById(id)) {
+					if (news.delete()) {
+						FlashMessenger.getMessenger(request.getSession()).addSuccessMessage("News has been deleted");
+						try {
+							response.sendRedirect("/jweb/Admin/News/Show");
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+					else {
+						FlashMessenger.getMessenger(request.getSession()).addErrorMessage("An error occurred. News not deleted");
+						try {
+							response.sendRedirect("/jweb/Admin/News/Edit/" + news.getId());
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+				else {
+					FlashMessenger.getMessenger(request.getSession()).addErrorMessage("Requested news doesn't exist");
+					try {
+						response.sendRedirect("/jweb/Admin/News/Add");
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
+	private void showListAction(HttpServletRequest request, HttpServletResponse response) {
+		ArrayList<News> newsArray = null;
+		if ((newsArray = News.fetchAll()) != null) {
+			request.setAttribute("newsArray", newsArray);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/showNews.jsp");
+			try {
+				dispatcher.forward(request, response);
+			} catch (ServletException | IOException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
+			//TODO: flashmessenger error and redirect to an error page (to create)
+		}
+	}
+	
 	private void addPostAction(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("user") instanceof User) {
@@ -175,23 +228,25 @@ public class AdminNews extends HttpServlet {
 		}
 	}
 	
-	private void deletePostAction(HttpServletRequest request, HttpServletResponse response) {
-		
-	}
-	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("AdminNews.doGet");
 		String uri = request.getRequestURI();
 		String[] segments = uri.split("/");
 		String routeSegment = segments[3];
 		if (routeSegment != null && routeSegment.equals("news")) {
-			
+			this.showListAction(request, response);
 		}
 		else if (routeSegment != null && segments.length > 3) {
-			getActions.get(segments[4].toLowerCase()).accept(request, response);
+			BiConsumer<HttpServletRequest, HttpServletResponse> method = getActions.get(segments[4].toLowerCase());
+			if (method != null) {
+				method.accept(request, response);
+			}
+			else {
+				//TODO: redirect to a 404 page (for the moment default is news list)
+				this.showListAction(request, response);
+			}
 		}	
 	}
 
@@ -206,7 +261,10 @@ public class AdminNews extends HttpServlet {
 			
 		}
 		else if (routeSegment != null && segments.length > 3) {
-			postActions.get(segments[4].toLowerCase()).accept(request, response);
+			BiConsumer<HttpServletRequest, HttpServletResponse> method = postActions.get(segments[4].toLowerCase());
+			if (method != null) {
+				method.accept(request, response);
+			}
 		}	
 	}
 

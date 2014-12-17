@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class News {
@@ -23,6 +24,34 @@ public class News {
 		this.title = title;
 		this.content = content;
 		this.createdBy = createdBy;
+	}
+	
+	public News(int id, String title, String content, int createdBy, Date createdDate) {
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+	}
+	
+	static public ArrayList<News> fetchAll() {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "SELECT * FROM news";
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query);
+				ResultSet rs = stmt.executeQuery();
+				ArrayList<News> results = new ArrayList<News>();
+				while (rs.next()) {
+					News news = new News(rs.getInt("ID"), rs.getString("title"), rs.getString("content"), rs.getInt("createdBy"), rs.getDate("CreatedDate"));					
+					results.add(news);
+				}
+				return results;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+		return null;
 	}
 	
 	public boolean fetchById(int id) {
@@ -101,6 +130,23 @@ public class News {
 			}
 			else {
 				return this.update(conn);
+			}
+		}
+		return false;
+	}
+	
+	public boolean delete() {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null && this.id > 0) {
+			String query = "DELETE FROM news WHERE id=?";	
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+				stmt.setInt(1, this.id);
+				if (stmt.executeUpdate() > 0) {
+					return true;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 		return false;

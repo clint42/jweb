@@ -244,7 +244,7 @@
                                     <a href="/jweb/Admin/News/Add">Add a news...</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">See all news</a>
+                                    <a href="/jweb/Admin/News/Show">See all news</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
