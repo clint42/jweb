@@ -61,6 +61,10 @@ public class User {
 					this.lastName = rs.getString("lastName");
 					this.role = rs.getString("role");
 					this.mail = rs.getString("mail");
+					this.address = rs.getString("address");
+					this.city = rs.getString("city");
+					this.country = rs.getString("country");
+					this.zipcode = rs.getString("zipcode");
 					return true;
 				}
 				conn.commit();
@@ -109,16 +113,32 @@ public class User {
 		return username;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
 	public String getFirstName() {
 		return firstName;
 	}
 	
 	public String getLastName() {
 		return lastName;
+	}
+	
+	public String getMail() {
+		return mail;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	
+	public String getZipcode() {
+		return zipcode;
 	}
 	
 	public String getRole() {

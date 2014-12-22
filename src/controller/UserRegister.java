@@ -68,15 +68,15 @@ public class UserRegister extends HttpServlet {
 		else if (!isEmailAddress(email))
 			FlashMessenger.getMessenger(session).addErrorMessage("You provided an invalid e-mail");
 		else {
-			User new_user = new User(0, uname, password, fname, lname, email, address, country, city, zipcode);
+			User new_user = new User(0, uname, password, fname, lname, email, address, city, country, zipcode);
 			if (new_user.saveToDb()) {
-				System.out.println("Creation of the user succeed");
+				FlashMessenger.getMessenger(session).addSuccessMessage("Your account has been created");
 				session.setAttribute("user", new_user);
 				response.sendRedirect("/jweb/User/Account");
 				return ;
 			}
 			else
-				System.out.println("Creation of the user failed");
+				FlashMessenger.getMessenger(session).addErrorMessage("The creation of your account failed");
 		}
 		request.getRequestDispatcher("/register.jsp").forward(request, response);						
 	}
