@@ -36,10 +36,12 @@ public class Abonewsletter {
 				while (rs.next()) {
 					if (rs.getInt("nb") == 0) {
 						stmt.close();
+						conn.close();
 						return false;
 					}
 					else {
 						stmt.close();
+						conn.close();
 						return true;
 					}
 				}
@@ -77,6 +79,8 @@ public class Abonewsletter {
 					stmt.setNull(4,  java.sql.Types.INTEGER);
 				}
 				if (stmt.executeUpdate() != 0) {
+					stmt.close();
+					conn.close();
 					return true;
 				}
 				return false;

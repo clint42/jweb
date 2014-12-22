@@ -39,8 +39,8 @@ public class Home extends HttpServlet {
 			products = new ArrayList<Product>();
 		}
 		request.setAttribute("products", products);
-		RequestDispatcher requestDispatcher; 
-		requestDispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher requestDispatcher;
+		requestDispatcher = request.getRequestDispatcher("/index.jsp");
 		requestDispatcher.forward(request, response);
 	}
 

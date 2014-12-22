@@ -14,7 +14,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <!--start slider -->
-    <link rel="stylesheet" href="css/fwslider.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fwslider.css" media="all">
     <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
     <script src="${pageContext.request.contextPath}/js/fwslider.js"></script>

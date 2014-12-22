@@ -47,6 +47,7 @@ public class News {
 					results.add(news);
 				}
 				stmt.close();
+				conn.close();
 				return results;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -71,6 +72,7 @@ public class News {
 					this.createdBy = rs.getInt("createdBy");
 					this.createdDate = rs.getDate("createdDate");
 					stmt.close();
+					conn.close();
 					return true;
 				}
 			} catch (SQLException e) {
@@ -116,6 +118,7 @@ public class News {
 			stmt.setInt(3, this.id);
 			if (stmt.executeUpdate() > 0) {
 				stmt.close();
+				conn.close();
 				return true;
 			}
 		} catch (SQLException e) {

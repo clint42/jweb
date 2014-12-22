@@ -1,6 +1,6 @@
 <Context>
 <Resource name="jdbc/jweb" auth="Container" type="javax.sql.DataSource"
-    maxActive="50" maxIdle="30" maxWait="10000"
+    maxActive="50" maxIdle="30" maxWait="1000"
     username="web" password="jweb"
     driverClassName="org.mariadb.jdbc.Driver"
     url="jdbc:mysql://localhost:3306/jweb"/>

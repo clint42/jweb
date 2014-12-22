@@ -81,6 +81,7 @@ public class User {
 					return true;
 				}
 				stmt.close();
+				conn.close();
 				return false;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -109,6 +110,7 @@ public class User {
 				stmt.setString(10, this.zipcode);
 				if (stmt.executeUpdate() > 0) {
 					stmt.close();
+					conn.close();
 					return true;
 				}
 				stmt.close();
@@ -131,6 +133,7 @@ public class User {
 				while (rs.next()) {
 					User usr = new User(rs.getInt("ID"), rs.getString("username"), "*****", rs.getString("role"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("mail"), rs.getString("address"), rs.getString("city"), rs.getString("country"), rs.getString("zipcode"));
 					stmt.close();
+					conn.close();
 					return usr;
 				}
 			} catch (SQLException e) {

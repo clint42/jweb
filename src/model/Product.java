@@ -46,6 +46,8 @@ public class Product {
 				while (rs.next()) {
 					results.add(new Product(rs.getInt("ID"), rs.getString("name"), rs.getString("description"), rs.getDouble("price"), rs.getInt("quantity"), rs.getInt("createdBy"), rs.getDate("creationDate"), rs.getDate("updateDate")));
 				}
+				stmt.close();
+				conn.close();
 				return results;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -71,6 +73,8 @@ public class Product {
 					this.createdBy = rs.getInt("createdBy");
 					this.creationDate = rs.getDate("creationDate");
 					this.updateDate = rs.getDate("updateDate");
+					stmt.close();
+					conn.close();
 					return true;
 				}
 			} catch (SQLException e) {
