@@ -20,8 +20,12 @@
     <servlet-class>controller.UserProduct</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Review</servlet-name>
-  	<servlet-class>controller.UserReview</servlet-class>
+    <servlet-name>Review</servlet-name>
+    <servlet-class>controller.UserReview</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PublicNews</servlet-name>
+  	<servlet-class>controller.PublicNews</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserAccount</servlet-name>
@@ -52,12 +56,16 @@
     <url-pattern>/Newsletter</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  	<servlet-name>PublicNews</servlet-name>
+  	<url-pattern>/News</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>Product</servlet-name>
     <url-pattern>/Product/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Review</servlet-name>
-  	<url-pattern>/User/Review/*</url-pattern>
+    <servlet-name>Review</servlet-name>
+    <url-pattern>/User/Review/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserAccount</servlet-name>
