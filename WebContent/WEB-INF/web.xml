@@ -24,8 +24,8 @@
     <servlet-class>controller.UserReview</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>PublicNews</servlet-name>
-  	<servlet-class>controller.PublicNews</servlet-class>
+    <servlet-name>PublicNews</servlet-name>
+    <servlet-class>controller.PublicNews</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserAccount</servlet-name>
@@ -47,6 +47,10 @@
     <servlet-name>AdminNews</servlet-name>
     <servlet-class>controller.AdminNews</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AdminUser</servlet-name>
+  	<servlet-class>controller.AdminUser</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/Home</url-pattern>
@@ -56,8 +60,8 @@
     <url-pattern>/Newsletter</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>PublicNews</servlet-name>
-  	<url-pattern>/News</url-pattern>
+    <servlet-name>PublicNews</servlet-name>
+    <url-pattern>/News</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Product</servlet-name>
@@ -86,6 +90,10 @@
   <servlet-mapping>
     <servlet-name>AdminNews</servlet-name>
     <url-pattern>/Admin/News/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminUser</servlet-name>
+  	<url-pattern>/Admin/Users/*</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>UserFilter</filter-name>

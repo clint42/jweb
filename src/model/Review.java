@@ -77,6 +77,7 @@ public class Review {
 				while (generatedKeys.next()) {
 					this.id = (int)generatedKeys.getLong(1);
 				}
+				conn.close();
 				return true;
 			}
 		} catch (SQLException e) {
@@ -87,6 +88,11 @@ public class Review {
 	
 	private boolean update(Connection conn) {
 		/* Not ready yet */
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 	

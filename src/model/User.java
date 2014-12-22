@@ -91,9 +91,31 @@ public class User {
 		return false;
 	}
 	
-	public boolean saveToDb() {
-		Connection conn = new MariaDbConnection().getConn();
-		if (conn != null) {
+	private boolean isUserAndMailNotUsed(Connection conn) {
+		String query = "SELECT COUNT(*) AS nb FROM user WHERE username=? OR mail=?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(query);
+			stmt.setString(1, this.username);
+			stmt.setString(2, this.mail);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				if (rs.getInt("nb") == 0) {
+					stmt.close();
+					return false;
+				}
+				else {
+					stmt.close();
+					return true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	private boolean insert(Connection conn) throws UserMailAlreadyUsedException {
+		if (this.isUserAndMailNotUsed(conn)) {
 			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail, address, city, country, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt;
 			try {
@@ -110,11 +132,38 @@ public class User {
 				stmt.setString(10, this.zipcode);
 				if (stmt.executeUpdate() > 0) {
 					stmt.close();
-					conn.close();
 					return true;
 				}
 				stmt.close();
 				return false;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+		else {
+			throw new UserMailAlreadyUsedException("Username or mail already used");
+		}
+	}
+	
+	private boolean update(Connection conn) {
+		/*Not ready yet*/
+		return false;
+	}
+	
+	public boolean saveToDb() throws UserMailAlreadyUsedException {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			try {
+				boolean ret;
+				if (this.id == 0) {
+					ret = this.insert(conn);
+				}
+				else {
+					ret = this.update(conn);
+				}
+				conn.close();
+				return ret;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -139,6 +188,34 @@ public class User {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		}
+		return null;
+	}
+	
+	static public User getUserByMail(String mail) {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "SELECT * FROM user WHERE mail=?";
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query);
+				stmt.setString(1, mail);
+				ResultSet rs = stmt.executeQuery();
+				while (rs.next()) {
+					User user = new User(rs.getInt("ID"), rs.getString("username"), "*****", rs.getString("role"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("mail"), rs.getString("address"), rs.getString("city"), rs.getString("country"), rs.getString("zipcode"));
+					conn.close();
+					return user;
+				}
+				conn.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				try {
+					conn.close();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+			return null;
 		}
 		return null;
 	}
