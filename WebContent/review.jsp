@@ -9,7 +9,7 @@ if (request.getAttribute("product") instanceof Product) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Lacob | <%= product.getName() %></title>
+<title>Lacob | Post a review</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -46,40 +46,30 @@ if (request.getAttribute("product") instanceof Product) {
   
 <div class="main">
 	<div class="wrap">
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title" style="text-transform: uppercase;"><%= product.getName() %></h3><br>
-		</div>
-		<div class="panel-body">
-			<div style="text-align:center">
-				<img src="${pageContext.request.contextPath}/images/pic1.jpg"/>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Post a comment on product</h3>
 			</div>
-			<p>
-			<%= product.getDescription() %>
-			</p>
-			<p>Product added to our list on : <%= product.getCreationDate() %></p>
+			<div class="panel-body">
+				<form action="/jweb/Review" method="POST" class="form">
+					<div class="input-group form-control">
+						<label class="input-group-addon">Rank: </label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="0" id="r0" class=""></span><label class="input-group-addon" for="r0">0</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="1" id="r1" class=""></span><label class="input-group-addon" for="r1">1</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="2" id="r2" class=""></span><label class="input-group-addon" for="r2">2</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="3" id="r3" class=""></span><label class="input-group-addon" for="r3">3</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="4" id="r4" class=""></span><label class="input-group-addon" for="r4">4</label>	
+						<span class="input-group-addon"><input type="radio" name="rank" value="5" id="r5" class=""></span><label class="input-group-addon" for="r5">5</label>	
+					</div><br>
+					<input type="text" name="title" placeholder="title" class="form-control"><br>
+					<textarea class="form-control" placeholder="Enter your comment here">
+					
+					</textarea><br>
+					<input type="submit" value="Send" name="submitBtn" class="btn btn-info form-control">
+				</form>
+			</div>
 		</div>
 	</div>
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<h3 class="panel-title">Users reviews</h3>
-		</div>
-		<div class="panel-body">
-		<% 
-		for (Review review: product.getReviews()) { %>
-			<jsp:include page="/fragments/reviewLine.jsp">
-				<jsp:param name="userName" value="<%= review.getUserFirstName() + \" \" + review.getUserLastName() %>"/>
-				<jsp:param name="reviewTitle" value="<%= review.getTitle() %>"/>
-				<jsp:param name="reviewText" value="<%= review.getText() %>"/>
-				<jsp:param name="reviewRank" value="<%= review.getRank() %>"/>
-				<jsp:param name="reviewDate" value="<%= review.getCreationDate() %>"/>
-			</jsp:include>
-		<% 
-		}
-		%>
-		<a href="/jweb/Review/<%= product.getId() %>" class="btn btn-info">Post a review</a>
-		</div>
-		</div>
 	</div>
    <div class="footer">
 		<div class="footer-top">

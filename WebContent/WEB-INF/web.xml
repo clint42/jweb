@@ -16,8 +16,12 @@
     <servlet-class>controller.Newsletter</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Product</servlet-name>
-  	<servlet-class>controller.UserProduct</servlet-class>
+    <servlet-name>Product</servlet-name>
+    <servlet-class>controller.UserProduct</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Review</servlet-name>
+  	<servlet-class>controller.UserReview</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserAccount</servlet-name>
@@ -36,10 +40,9 @@
     <servlet-class>controller.AdminPanel</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>AdminNews</servlet-name>
-  	<servlet-class>controller.AdminNews</servlet-class>
+    <servlet-name>AdminNews</servlet-name>
+    <servlet-class>controller.AdminNews</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/Home</url-pattern>
@@ -49,8 +52,12 @@
     <url-pattern>/Newsletter</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Product</servlet-name>
-  	<url-pattern>/Product/*</url-pattern>
+    <servlet-name>Product</servlet-name>
+    <url-pattern>/Product/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Review</servlet-name>
+  	<url-pattern>/Review/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserAccount</servlet-name>
@@ -69,8 +76,8 @@
     <url-pattern>/Admin/Home</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>AdminNews</servlet-name>
-  	<url-pattern>/Admin/News/*</url-pattern>
+    <servlet-name>AdminNews</servlet-name>
+    <url-pattern>/Admin/News/*</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>UserFilter</filter-name>
@@ -88,9 +95,8 @@
     <filter-name>AdminFilter</filter-name>
     <url-pattern>/Admin/*</url-pattern>
   </filter-mapping>
-  
-	<error-page>
-        <error-code>404</error-code>
-        <location>/404.jsp</location>
-	</error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
 </web-app>
