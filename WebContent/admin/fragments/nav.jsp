@@ -241,16 +241,16 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> News<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/jweb/Admin/News/Add">Add a news...</a>
+                                    <i class="fa fa-newspaper-o fa-fw"></i><a href="/jweb/Admin/News/Add"> Add a news...</a>
                                 </li>
                                 <li>
-                                    <a href="/jweb/Admin/News/Show">See all news</a>
+                                    <i class="fa fa-newspaper-o fa-fw"></i><a href="/jweb/Admin/News/Show">See all news</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="/jweb/Admin/Users"><i class="fa fa-users fa-fw"></i> Users</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>

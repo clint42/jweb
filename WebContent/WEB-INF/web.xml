@@ -9,11 +9,23 @@
   <display-name>JWeb</display-name>
   <servlet>
     <servlet-name>Home</servlet-name>
-    <servlet-class>controller.Test</servlet-class>
+    <servlet-class>controller.Home</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Newsletter</servlet-name>
     <servlet-class>controller.Newsletter</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Product</servlet-name>
+    <servlet-class>controller.UserProduct</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Review</servlet-name>
+    <servlet-class>controller.UserReview</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PublicNews</servlet-name>
+    <servlet-class>controller.PublicNews</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>UserAccount</servlet-name>
@@ -32,10 +44,13 @@
     <servlet-class>controller.AdminPanel</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>AdminNews</servlet-name>
-  	<servlet-class>controller.AdminNews</servlet-class>
+    <servlet-name>AdminNews</servlet-name>
+    <servlet-class>controller.AdminNews</servlet-class>
   </servlet>
-  
+  <servlet>
+  	<servlet-name>AdminUser</servlet-name>
+  	<servlet-class>controller.AdminUser</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/Home</url-pattern>
@@ -43,6 +58,18 @@
   <servlet-mapping>
     <servlet-name>Newsletter</servlet-name>
     <url-pattern>/Newsletter</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PublicNews</servlet-name>
+    <url-pattern>/News</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Product</servlet-name>
+    <url-pattern>/Product/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Review</servlet-name>
+    <url-pattern>/User/Review/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserAccount</servlet-name>
@@ -61,8 +88,12 @@
     <url-pattern>/Admin/Home</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>AdminNews</servlet-name>
-  	<url-pattern>/Admin/News/*</url-pattern>
+    <servlet-name>AdminNews</servlet-name>
+    <url-pattern>/Admin/News/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminUser</servlet-name>
+  	<url-pattern>/Admin/Users/*</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>UserFilter</filter-name>
@@ -80,4 +111,8 @@
     <filter-name>AdminFilter</filter-name>
     <url-pattern>/Admin/*</url-pattern>
   </filter-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
 </web-app>

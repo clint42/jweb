@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="java.util.ArrayList, model.Product" %>
+<%
+ArrayList<Product> products = new ArrayList<Product>();
+if (request.getAttribute("products") instanceof ArrayList<?>) {
+	products = (ArrayList<Product>)(request.getAttribute("products"));
+}
+%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -6,6 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="${pageContext.request.contextPath}/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
 <!-- start menu -->
@@ -13,7 +22,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <!--start slider -->
-    <link rel="stylesheet" href="css/fwslider.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fwslider.css" media="all">
     <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
     <script src="${pageContext.request.contextPath}/js/fwslider.js"></script>
@@ -83,7 +92,24 @@
     <!--/slider -->
 <div class="main">
 	<div class="wrap">
-		<div class="section group">
+	<div class="row">
+		<div class="col-md-10">
+		<%
+		for (Product product: products) {
+		%>
+		<jsp:include page="/fragments/productBox.jsp">
+			<jsp:param name="productId" value="<%= product.getId() %>"/>
+    		<jsp:param name="productName" value="<%= product.getName() %>"/>
+    		<jsp:param name="productPrice" value="<%= product.getPrice() %>"/>
+    		<jsp:param name="productCreationDate" value="<%= product.getCreationDate() %>"/>
+    		<jsp:param name="productNew" value="<%= product.isNew() %>"/>
+    	</jsp:include>
+		<%
+		}
+		%>
+		</div>
+	</div>
+		<!-- <div class="section group">
 		  <div class="cont span_2_of_3">
 		  	<h2 class="head">Hard Drive Products</h2>
 			<div class="top-box">
@@ -213,6 +239,7 @@
 				<div class="clear"></div>
 			</div>			 						 			    
 		  </div>
+		  -->
 			<div class="rsidebar span_1_of_left">
 				<div class="top-border"> </div>
 				 <div class="border">
@@ -365,4 +392,6 @@
 	     </div>
 	</div>
 </body>
+ <!-- Bootstrap Core JavaScript -->
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </html>
