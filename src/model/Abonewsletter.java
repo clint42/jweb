@@ -35,9 +35,11 @@ public class Abonewsletter {
 				ResultSet rs = stmt.executeQuery();
 				while (rs.next()) {
 					if (rs.getInt("nb") == 0) {
+						stmt.close();
 						return false;
 					}
 					else {
+						stmt.close();
 						return true;
 					}
 				}

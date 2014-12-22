@@ -77,6 +77,7 @@ public class User {
 					this.city = rs.getString("city");
 					this.country = rs.getString("country");
 					this.zipcode = rs.getString("zipcode");
+					stmt.close();
 					return true;
 				}
 				stmt.close();

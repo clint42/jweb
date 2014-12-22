@@ -57,7 +57,7 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>Review</servlet-name>
-  	<url-pattern>/Review/*</url-pattern>
+  	<url-pattern>/User/Review/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UserAccount</servlet-name>

@@ -77,7 +77,18 @@ if (request.getAttribute("product") instanceof Product) {
 		<% 
 		}
 		%>
-		<a href="/jweb/Review/<%= product.getId() %>" class="btn btn-info">Post a review</a>
+		<%
+		if (session.getAttribute("user") != null) {
+			%>
+			<a href="/jweb/User/Review/<%= product.getId() %>" class="btn btn-info">Post a review</a>
+			<%
+		}
+		else {
+		%>
+		<a href="/jweb/User/Login" class="btn btn-default">Sign in to post a review</a>
+		<%
+		}
+		%>
 		</div>
 		</div>
 	</div>

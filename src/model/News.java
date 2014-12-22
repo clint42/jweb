@@ -46,6 +46,7 @@ public class News {
 					News news = new News(rs.getInt("ID"), rs.getString("title"), rs.getString("content"), rs.getInt("createdBy"), rs.getDate("CreatedDate"));					
 					results.add(news);
 				}
+				stmt.close();
 				return results;
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -69,6 +70,7 @@ public class News {
 					this.content = rs.getString("content");
 					this.createdBy = rs.getInt("createdBy");
 					this.createdDate = rs.getDate("createdDate");
+					stmt.close();
 					return true;
 				}
 			} catch (SQLException e) {
@@ -113,6 +115,7 @@ public class News {
 			stmt.setString(2, this.content);
 			stmt.setInt(3, this.id);
 			if (stmt.executeUpdate() > 0) {
+				stmt.close();
 				return true;
 			}
 		} catch (SQLException e) {
@@ -143,6 +146,7 @@ public class News {
 				PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 				stmt.setInt(1, this.id);
 				if (stmt.executeUpdate() > 0) {
+					stmt.close();
 					return true;
 				}
 			} catch (SQLException e) {

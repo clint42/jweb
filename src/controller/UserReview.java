@@ -1,5 +1,7 @@
 package controller;
 
+import helper.FlashMessenger;
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -8,6 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.tomcat.util.digester.Digester;
+
+import model.Product;
 
 /**
  * Servlet implementation class UserReview
@@ -28,8 +34,29 @@ public class UserReview extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/review.jsp");
-		dispatcher.forward(request, response);
+		String uri = request.getPathInfo();
+		String[] segments = uri.split("/");
+		if (segments.length > 1) {
+			try {
+				int productId = Integer.parseInt(segments[1]);
+				Product product = new Product();
+				if (product.fetchById(productId)) {
+					request.setAttribute("product", product);
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/user/review.jsp");
+					dispatcher.forward(request, response);
+				}
+				else {
+					FlashMessenger.getMessenger(request.getSession()).addErrorMessage("The product you want to review doesn't exist");
+					response.sendRedirect("/jweb/Home");
+				}
+				
+			}
+			catch (NumberFormatException e){
+				e.printStackTrace();
+				return;
+			}
+		}
+		
 	}
 
 	/**

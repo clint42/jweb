@@ -44,6 +44,7 @@ public class Review {
 				while (rs.next()) {
 					results.add(new Review(rs.getInt("ID"), rs.getString("title"), rs.getString("text"), rs.getDouble("rank"), rs.getInt("userId"), rs.getInt("productId"), rs.getDate("creationDate")));
 				}
+				stmt.close();
 				return results;
 			} catch (SQLException e) {
 				e.printStackTrace();
