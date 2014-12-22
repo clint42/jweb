@@ -121,7 +121,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>660 px</X>
+              <X>780 px</X>
               <Y>490 px</Y>
             </Location>
             <Size>
@@ -417,7 +417,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>370 px</X>
+              <X>450 px</X>
               <Y>460 px</Y>
             </Location>
             <Size>
@@ -496,7 +496,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>168.5 px</X>
+                  <X>128.5 px</X>
                   <Y>-110 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -527,7 +527,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>27.5 px</Y>
+                  <Y>80.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -539,7 +539,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>167.5 px</Y>
+                  <Y>110.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -549,16 +549,6 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>640 px</X>
-                <Y>517.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>640 px</X>
-                <Y>627.5 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>jweb.news.FK_news_user_ID</Path>
@@ -575,8 +565,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>20 px</X>
-                  <Y>-55 px</Y>
+                  <X>68.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -630,7 +620,7 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>418.25 px</X>
+                <X>498.25 px</X>
                 <Y>130.75 px</Y>
               </PointD>
             </BendPoints>
@@ -650,7 +640,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>201.75 px</X>
+                  <X>121.75 px</X>
                   <Y>-164.625 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -729,13 +719,105 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-20 px</X>
-                  <Y>-90 px</Y>
+                  <X>-138.5 px</X>
+                  <Y>-180 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
                   <OID>42</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>43</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>270 px</X>
+              <Y>260 px</Y>
+            </Location>
+            <Size>
+              <Width>193 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>jweb.review</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>44</OID>
+              <Comment>45</Comment>
+              <OutModel>43</OutModel>
+              <InModel>22</InModel>
+              <OutPort>46</OutPort>
+              <InPort>47</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>186.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>46</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>6.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>47</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>jweb.review.FK_review_user_ID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>45</OID>
+              <HolderModel>44</HolderModel>
+              <Port>48</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>-19.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>48</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -752,7 +834,7 @@
           <Scale>1</Scale>
           <Location>
             <X>-95 px</X>
-            <Y>96 px</Y>
+            <Y>209 px</Y>
           </Location>
         </ViewPort>
       </Model>

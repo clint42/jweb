@@ -51,6 +51,32 @@ public class Product {
 		return null;
 	}
 	
+	public boolean fetchById(int id) {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "SELECT * FROM product WHERE ID=?";
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query);
+				stmt.setInt(1, id);
+				ResultSet rs = stmt.executeQuery();
+				while (rs.next()) {
+					this.id = rs.getInt("ID");
+					this.name = rs.getString("name");
+					this.description = rs.getString("description");
+					this.price = rs.getDouble("price");
+					this.quantity = rs.getInt("quantity");
+					this.createdBy = rs.getInt("createdBy");
+					this.creationDate = rs.getDate("creationDate");
+					this.updateDate = rs.getDate("updateDate");
+					return true;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+	
 	public int getId() {
 		return this.id;
 	}

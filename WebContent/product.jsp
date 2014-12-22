@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.ArrayList, model.Product" %>
+<%@ page language="java" contentType="text/html; charset=utf8"
+    pageEncoding="utf8" import="model.Product" %>
 <%
-ArrayList<Product> products = new ArrayList<Product>();
-if (request.getAttribute("products") instanceof ArrayList<?>) {
-	products = (ArrayList<Product>)(request.getAttribute("products"));
+Product product = new Product();
+if (request.getAttribute("product") instanceof Product) {
+	product = (Product)(request.getAttribute("product"));
 }
 %>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Lacob | Home</title>
+<title>Lacob | <%= product.getName() %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -46,12 +46,29 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
   
 <div class="main">
 	<div class="wrap">
-	<div class="row">
-		<div class="col-md-12">
-		
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title" style="text-transform: uppercase;"><%= product.getName() %></h3><br>
+		</div>
+		<div class="panel-body">
+			<div style="text-align:center">
+				<img src="${pageContext.request.contextPath}/images/pic1.jpg"/>
+			</div>
+			<p>
+			<%= product.getDescription() %>
+			</p>
+			<p>Product added to our list on : <%= product.getCreationDate() %></p>
 		</div>
 	</div>
-	</div>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Users reviews</h3>
+		</div>
+		<div class="panel-body">
+		
+		</div>
+		<p>Here loop on all user comments for this product</p>
+		</div>
 	</div>
    <div class="footer">
 		<div class="footer-top">
@@ -149,7 +166,7 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 		<div class="footer-bottom">
 			<div class="wrap">
 	             <div class="copy">
-			        <p>Â© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+			        <p>ÃÂ© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
 		         </div>
 				<div class="f-list2">
 				 <ul>
