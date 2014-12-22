@@ -747,7 +747,7 @@
             </Location>
             <Size>
               <Width>193 px</Width>
-              <Height>178 px</Height>
+              <Height>195 px</Height>
             </Size>
             <DbOid>
               <Path>jweb.review</Path>
@@ -795,6 +795,24 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>456.5 px</X>
+                <Y>475 px</Y>
+              </PointD>
+              <PointD>
+                <X>471.5 px</X>
+                <Y>475 px</Y>
+              </PointD>
+              <PointD>
+                <X>471.5 px</X>
+                <Y>440 px</Y>
+              </PointD>
+              <PointD>
+                <X>456.5 px</X>
+                <Y>440 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>jweb.review.FK_review_user_ID</Path>
@@ -811,8 +829,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>-11 px</Y>
+                  <X>-15 px</X>
+                  <Y>-2.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -842,7 +860,7 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>141 px</Y>
+                  <Y>154.466292134831 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -864,6 +882,16 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>250 px</X>
+                <Y>414.466278076172 px</Y>
+              </PointD>
+              <PointD>
+                <X>250 px</X>
+                <Y>401 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>jweb.review.FK_review_product_ID</Path>
@@ -880,8 +908,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>38.5 px</X>
-                  <Y>0 px</Y>
+                  <X>48.5 px</X>
+                  <Y>13.4662921348315 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
