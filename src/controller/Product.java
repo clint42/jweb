@@ -8,21 +8,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
-import javax.naming.InitialContext;
-import javax.naming.Context;
-import javax.naming.NamingException;
 
 /**
- * Servlet implementation class Test
+ * Servlet implementation class Product
  */
-public class Test extends HttpServlet {
+public class Product extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Test() {
+    public Product() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,10 +27,10 @@ public class Test extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub	
-		RequestDispatcher requestDispatcher; 
-		requestDispatcher = request.getRequestDispatcher("index.jsp");
-		requestDispatcher.forward(request, response);
+		String uri = request.getPathInfo();
+		System.out.print("request path info: " + request.getPathInfo());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/product.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

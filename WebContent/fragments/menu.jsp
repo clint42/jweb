@@ -5,7 +5,7 @@
 	</div>
 	<div class="menu">
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a href="/jweb/">Home</a></li>
+			<li class="active grid"><a href="/jweb/Home">Home</a></li>
 			<li><a class="color4" href="#">Hard Drive</a></li>				
 			<li><a class="color5" href="#">Software</a></li>
 			<li><a class="color6" href="other.html">Who are we ?</a></li>
