@@ -5,6 +5,18 @@ Product product = new Product();
 if (request.getAttribute("product") instanceof Product) {
 	product = (Product)(request.getAttribute("product"));
 }
+String reviewTitle = "";
+String reviewComment = "";
+double reviewRank = -1;
+if (request.getAttribute("reviewTitle") instanceof String) {
+	reviewTitle = (String)request.getAttribute("reviewTitle");
+}
+if (request.getAttribute("reviewComment") instanceof String) {
+	reviewComment = (String)request.getAttribute("reviewComment");
+}
+if (request.getAttribute("reviewRank") instanceof Double) {
+	reviewRank = (Double)request.getAttribute("reviewRank");
+}
 %>
 <!DOCTYPE HTML>
 <html>
@@ -48,23 +60,21 @@ if (request.getAttribute("product") instanceof Product) {
 	<div class="wrap">
 		<div class="panel panel-info">
 			<div class="panel-heading">
-				<h3 class="panel-title">Post a comment on product</h3>
+				<h3 class="panel-title">Post a comment about <%= product.getName() %></h3>
 			</div>
 			<div class="panel-body">
-				<form action="/jweb/Review" method="POST" class="form">
+				<form action="/jweb/User/Review/<%= product.getId() %>" method="POST" class="form">
 					<div class="input-group form-control">
 						<label class="input-group-addon">Rank: </label>
-						<span class="input-group-addon"><input type="radio" name="rank" value="0" id="r0" class=""></span><label class="input-group-addon" for="r0">0</label>
-						<span class="input-group-addon"><input type="radio" name="rank" value="1" id="r1" class=""></span><label class="input-group-addon" for="r1">1</label>
-						<span class="input-group-addon"><input type="radio" name="rank" value="2" id="r2" class=""></span><label class="input-group-addon" for="r2">2</label>
-						<span class="input-group-addon"><input type="radio" name="rank" value="3" id="r3" class=""></span><label class="input-group-addon" for="r3">3</label>
-						<span class="input-group-addon"><input type="radio" name="rank" value="4" id="r4" class=""></span><label class="input-group-addon" for="r4">4</label>	
-						<span class="input-group-addon"><input type="radio" name="rank" value="5" id="r5" class=""></span><label class="input-group-addon" for="r5">5</label>	
+						<span class="input-group-addon"><input type="radio" name="rank" value="0" id="r0" class="" <%= (reviewRank == 0) ? "checked=checked" : "" %>></span><label class="input-group-addon" for="r0">0</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="1" id="r1" class="" <%= (reviewRank == 1) ? "checked=checked" : "" %>></span><label class="input-group-addon" for="r1">1</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="2" id="r2" class="" <%= (reviewRank == 2) ? "checked=checked" : "" %>></span><label class="input-group-addon" for="r2">2</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="3" id="r3" class="" <%= (reviewRank == 3) ? "checked=checked" : "" %>></span><label class="input-group-addon" for="r3">3</label>
+						<span class="input-group-addon"><input type="radio" name="rank" value="4" id="r4" class="" <%= (reviewRank == 4) ? "checked=checked" : "" %>></span><label class="input-group-addon" for="r4">4</label>	
+						<span class="input-group-addon"><input type="radio" name="rank" value="5" id="r5" class="" <%= (reviewRank == 5) ? "checked=checked" : "" %>></span><label class="input-group-addon" for="r5">5</label>	
 					</div><br>
-					<input type="text" name="title" placeholder="title" class="form-control"><br>
-					<textarea class="form-control" placeholder="Enter your comment here">
-					
-					</textarea><br>
+					<input type="text" name="title" placeholder="title" class="form-control" value="<%= reviewTitle %>"><br>
+					<textarea class="form-control" name="comment" placeholder="Enter your comment here"><%= reviewComment %></textarea><br>
 					<input type="submit" value="Send" name="submitBtn" class="btn btn-info form-control">
 				</form>
 			</div>

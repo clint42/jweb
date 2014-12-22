@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -32,6 +33,14 @@ public class Review {
 		this.creationDate = creationDate;
 	}
 	
+	public Review(String title, String text, double rank, int userId, int productId) {
+		this.title = title;
+		this.text = text;
+		this.rank = rank;
+		this.userId = userId;
+		this.productId = productId;
+	}
+	
 	static public ArrayList<Review> fetchAllProductReview(int productId) {
 		Connection conn = new MariaDbConnection().getConn();
 		ArrayList<Review> results = new ArrayList<Review>();
@@ -52,6 +61,46 @@ public class Review {
 			}
 		}
 		return results;
+	}
+	
+	private boolean insert(Connection conn) {
+		String query = "INSERT INTO review (title, text, rank, userID, productID) VALUES(?,?,?,?,?)";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, this.title);
+			stmt.setString(2, this.text);
+			stmt.setDouble(3, this.rank);
+			stmt.setInt(4, this.userId);
+			stmt.setInt(5, this.productId);
+			if (stmt.executeUpdate() > 0) {
+				ResultSet generatedKeys = stmt.getGeneratedKeys();
+				while (generatedKeys.next()) {
+					this.id = (int)generatedKeys.getLong(1);
+				}
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	private boolean update(Connection conn) {
+		/* Not ready yet */
+		return false;
+	}
+	
+	public boolean saveToDb() {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			if (this.id == 0) {
+				return this.insert(conn);
+			}
+			else {
+				return this.update(conn);
+			}
+		}
+		return false;
 	}
 	
 	public User getUser() {
