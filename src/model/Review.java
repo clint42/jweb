@@ -16,6 +16,8 @@ public class Review {
 	private int productId = 0;
  	private Date creationDate = null;
 	
+ 	private User user = null;
+ 	
 	public Review() {
 		
 	}
@@ -48,5 +50,52 @@ public class Review {
 			}
 		}
 		return results;
+	}
+	
+	public User getUser() {
+		if (this.user == null) {
+			this.user = User.getUserById(this.id);
+		}
+		return this.user;
+	}
+	
+	public String getUserFirstName() {
+		if (this.user == null) {
+			this.getUser();
+		}
+		if (user != null) {
+			return this.user.getFirstName();
+		}
+		else {
+			return "";
+		}
+	}
+	
+	public String getUserLastName() {
+		if (this.user == null) {
+			this.getUser();
+		}
+		if (user != null) {
+			return this.user.getLastName();
+		}
+		else {
+			return "";
+		}
+	}
+	
+	public double getRank() {
+		return this.rank;
+	}
+	
+	public String getTitle() {
+		return this.title;
+	}
+	
+	public String getText() {
+		return this.text;
+	}
+	
+	public Date getCreationDate() {
+		return this.creationDate;
 	}
 }

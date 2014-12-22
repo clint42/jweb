@@ -33,6 +33,7 @@ public class User {
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.role = role;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mail = mail;
@@ -42,13 +43,24 @@ public class User {
 		this.zipcode = zipcode;
 	}
 	
+	public User(int id, String username, String password, String role, String firstName, String lastName, String mail, String address, String city, String country, String zipcode) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mail = mail;
+		this.address = address;
+		this.city = city;
+		this.country = country;
+		this.zipcode = zipcode;
+	}
 	public boolean fetchUserFromDb(String username, String password) {
 		PreparedStatement stmt = null;
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
 			try {
 				String query = "SELECT * FROM User WHERE (username=? OR mail=?) AND password=?";
-				conn.setAutoCommit(false);
 				stmt = conn.prepareStatement(query);
 				stmt.setString(1, username);
 				stmt.setString(2, username);
@@ -61,13 +73,15 @@ public class User {
 					this.lastName = rs.getString("lastName");
 					this.role = rs.getString("role");
 					this.mail = rs.getString("mail");
+					this.address = rs.getString("address");
+					this.city = rs.getString("city");
+					this.country = rs.getString("country");
+					this.zipcode = rs.getString("zipcode");
 					return true;
 				}
-				conn.commit();
 				stmt.close();
 				return false;
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return false;
 			}
@@ -93,16 +107,36 @@ public class User {
 				stmt.setString(9, this.country);
 				stmt.setString(10, this.zipcode);
 				if (stmt.executeUpdate() > 0) {
+					stmt.close();
 					return true;
 				}
+				stmt.close();
 				return false;
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-				return false;
 			}
 		}
 		return false;
+	}
+	
+	static public User getUserById(int id) {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "SELECT * FROM user WHERE ID=?";
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query);
+				stmt.setInt(1, id);
+				ResultSet rs = stmt.executeQuery();
+				while (rs.next()) {
+					User usr = new User(rs.getInt("ID"), rs.getString("username"), "*****", rs.getString("role"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("mail"), rs.getString("address"), rs.getString("city"), rs.getString("country"), rs.getString("zipcode"));
+					stmt.close();
+					return usr;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 	
 	public String getFirstName() {

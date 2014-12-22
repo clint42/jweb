@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf8"
-    pageEncoding="utf8" import="model.Product" %>
+    pageEncoding="utf8" import="model.Product, model.Review, java.util.ArrayList" %>
 <%
 Product product = new Product();
 if (request.getAttribute("product") instanceof Product) {
@@ -22,7 +22,7 @@ if (request.getAttribute("product") instanceof Product) {
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <!--start slider -->
-    <link rel="stylesheet" href="css/fwslider.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fwslider.css" media="all">
     <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
     <script src="${pageContext.request.contextPath}/js/fwslider.js"></script>
@@ -65,9 +65,20 @@ if (request.getAttribute("product") instanceof Product) {
 			<h3 class="panel-title">Users reviews</h3>
 		</div>
 		<div class="panel-body">
-		
+		<% 
+		for (Review review: product.getReviews()) { %>
+			<jsp:include page="/fragments/reviewLine.jsp">
+				<jsp:param name="userName" value="<%= review.getUserFirstName() + \" \" + review.getUserLastName() %>"/>
+				<jsp:param name="reviewTitle" value="<%= review.getTitle() %>"/>
+				<jsp:param name="reviewText" value="<%= review.getText() %>"/>
+				<jsp:param name="reviewRank" value="<%= review.getRank() %>"/>
+				<jsp:param name="reviewDate" value="<%= review.getCreationDate() %>"/>
+			</jsp:include>
+		<% 
+		}
+		%>
+		<a href="#" class="btn btn-info">Post a review</a>
 		</div>
-		<p>Here loop on all user comments for this product</p>
 		</div>
 	</div>
    <div class="footer">

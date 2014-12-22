@@ -17,6 +17,9 @@ public class Product {
 	private Date creationDate = null;
 	private Date updateDate = null;
 	
+	private ArrayList<Review> reviews = null;
+	private Double averageRank = -1.0;
+	
 	public Product() {
 		
 	}
@@ -77,6 +80,24 @@ public class Product {
 		return false;
 	}
 	
+	public ArrayList<Review> getReviews() {
+		if (this.id > 0 && this.reviews == null) {
+			this.reviews = Review.fetchAllProductReview(this.id);
+		}
+		return this.reviews;
+	}
+	
+	public double getAverageRank() {
+		if (this.averageRank == -1.0 && this.reviews != null) {
+			double totalRank = 0.0;
+			for (Review review: this.reviews) {
+				totalRank += review.getRank();
+			}
+			this.averageRank = totalRank / this.reviews.size();
+		}
+		return this.averageRank;
+	}
+
 	public int getId() {
 		return this.id;
 	}
