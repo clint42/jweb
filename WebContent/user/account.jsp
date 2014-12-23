@@ -68,8 +68,7 @@
 					</div>
 					<h5 class="title">E-Mail</h5>
 					<div>
-						<input type="text" name="E-Mail" value="<%=user_info.getMail()%>"
-							onblur="if (this.value == '') {this.value = '<%=user_info.getMail()%>';}">
+						<input type="text" name="E-Mail" value="<%=user_info.getMail()%>" disabled>
 					</div>
 					<h5 class="title">Address</h5>
 					<div>

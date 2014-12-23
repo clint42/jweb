@@ -33,7 +33,6 @@ public class User {
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.role = role;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mail = mail;
@@ -47,6 +46,7 @@ public class User {
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.role = role;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.mail = mail;
@@ -147,7 +147,40 @@ public class User {
 	}
 	
 	private boolean update(Connection conn) {
-		/*Not ready yet*/
+		String query = "UPDATE user SET address=?, country=?, city=?, zipcode=?, password=? WHERE id=?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, this.address);
+			stmt.setString(2, this.country);
+			stmt.setString(3, this.city);
+			stmt.setString(4, this.zipcode);
+			stmt.setString(5, this.password);
+			if (stmt.executeUpdate() > 0) {
+				stmt.close();
+				conn.close();
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean delete() {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null && this.id > 0) {
+			String query = "DELETE FROM user WHERE id=?";	
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+				stmt.setInt(1, this.id);
+				if (stmt.executeUpdate() > 0) {
+					stmt.close();
+					return true;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return false;
 	}
 	
@@ -168,6 +201,10 @@ public class User {
 				e.printStackTrace();
 			}
 		}
+		return false;
+	}
+	
+	public boolean eraseToDb() {
 		return false;
 	}
 	
@@ -219,6 +256,15 @@ public class User {
 		}
 		return null;
 	}
+	
+	public void setNewInformation(String address, String country, String city, String zipcode) {
+		this.address = address;
+		this.country = country;
+		this.city = city;
+		this.zipcode = zipcode;
+	}
+	
+	
 	
 	public String getUsername() {
 		return username;
