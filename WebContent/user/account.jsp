@@ -186,10 +186,8 @@
 				<div class="col_1_of_2 span_1_of_2">
 					<h5 class="title">Password</h5>
 					<div>
-						<input type="text" name="Actual Password"
-							value=""
-							onfocus="if (this.value == 'Password') {this.value = ''; this.type='password'}; "
-							onblur="if (this.value == '') {this.type='text'; this.value = 'Password';}">
+						<input type="text" name="Password"
+							value="" >
 					</div>
 					<button class="grey">Submit</button>
 				</div>

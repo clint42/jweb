@@ -24,12 +24,14 @@ public class User {
 	private String city = "";
 	private String country = "";
 	private String zipcode = "";
-	
+
 	public User() {
 
 	}
-	
-	public User(int id, String username, String password, String firstName, String lastName, String mail, String address, String city, String country, String zipcode) {
+
+	public User(int id, String username, String password, String firstName,
+			String lastName, String mail, String address, String city,
+			String country, String zipcode) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -41,8 +43,10 @@ public class User {
 		this.country = country;
 		this.zipcode = zipcode;
 	}
-	
-	public User(int id, String username, String password, String role, String firstName, String lastName, String mail, String address, String city, String country, String zipcode) {
+
+	public User(int id, String username, String password, String role,
+			String firstName, String lastName, String mail, String address,
+			String city, String country, String zipcode) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -55,6 +59,7 @@ public class User {
 		this.country = country;
 		this.zipcode = zipcode;
 	}
+
 	public boolean fetchUserFromDb(String username, String password) {
 		PreparedStatement stmt = null;
 		Connection conn = new MariaDbConnection().getConn();
@@ -90,7 +95,7 @@ public class User {
 		}
 		return false;
 	}
-	
+
 	private boolean isUserAndMailNotUsed(Connection conn) {
 		String query = "SELECT COUNT(*) AS nb FROM user WHERE username=? OR mail=?";
 		try {
@@ -102,8 +107,7 @@ public class User {
 				if (rs.getInt("nb") == 0) {
 					stmt.close();
 					return false;
-				}
-				else {
+				} else {
 					stmt.close();
 					return true;
 				}
@@ -113,13 +117,14 @@ public class User {
 		}
 		return true;
 	}
-	
+
 	private boolean insert(Connection conn) throws UserMailAlreadyUsedException {
 		if (this.isUserAndMailNotUsed(conn)) {
 			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail, address, city, country, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt;
 			try {
-				stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+				stmt = conn.prepareStatement(query,
+						Statement.RETURN_GENERATED_KEYS);
 				stmt.setString(1, this.username);
 				stmt.setString(2, this.password);
 				stmt.setString(3, this.firstName);
@@ -140,21 +145,22 @@ public class User {
 				e.printStackTrace();
 			}
 			return false;
-		}
-		else {
-			throw new UserMailAlreadyUsedException("Username or mail already used");
+		} else {
+			throw new UserMailAlreadyUsedException(
+					"Username or mail already used");
 		}
 	}
-	
+
 	private boolean update(Connection conn) {
-		String query = "UPDATE user SET address=?, country=?, city=?, zipcode=?, password=? WHERE id=?";
+		String query = "UPDATE user SET address=?, country=?, city=?, zipcode=? WHERE id=?";
 		try {
-			PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			PreparedStatement stmt = conn.prepareStatement(query,
+					Statement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, this.address);
 			stmt.setString(2, this.country);
 			stmt.setString(3, this.city);
 			stmt.setString(4, this.zipcode);
-			stmt.setString(5, this.password);
+			stmt.setInt(5, this.id);
 			if (stmt.executeUpdate() > 0) {
 				stmt.close();
 				conn.close();
@@ -169,9 +175,10 @@ public class User {
 	public boolean delete() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null && this.id > 0) {
-			String query = "DELETE FROM user WHERE id=?";	
+			String query = "DELETE FROM user WHERE id=?";
 			try {
-				PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+				PreparedStatement stmt = conn.prepareStatement(query,
+						Statement.RETURN_GENERATED_KEYS);
 				stmt.setInt(1, this.id);
 				if (stmt.executeUpdate() > 0) {
 					stmt.close();
@@ -183,7 +190,7 @@ public class User {
 		}
 		return false;
 	}
-	
+
 	public boolean saveToDb() throws UserMailAlreadyUsedException {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -191,8 +198,7 @@ public class User {
 				boolean ret;
 				if (this.id == 0) {
 					ret = this.insert(conn);
-				}
-				else {
+				} else {
 					ret = this.update(conn);
 				}
 				conn.close();
@@ -203,11 +209,53 @@ public class User {
 		}
 		return false;
 	}
-	
-	public boolean eraseToDb() {
+
+	public boolean isSamePassword(String password) {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "SELECT COUNT(*) AS nb FROM user WHERE username=? AND password=?";
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query);
+				stmt.setString(1, this.username);
+				stmt.setString(2, password);
+				ResultSet rs = stmt.executeQuery();
+				while (rs.next()) {
+					if (rs.getInt("nb") == 1) {
+						stmt.close();
+						return true;
+					} else {
+						stmt.close();
+						return false;
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return false;
 	}
-	
+
+	public boolean changePasswordToDb(String password) {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			String query = "UPDATE user SET password=? WHERE id=?";
+			try {
+				PreparedStatement stmt = conn.prepareStatement(query,
+						Statement.RETURN_GENERATED_KEYS);
+				stmt.setString(1, password);
+				stmt.setInt(2, this.id);
+				if (stmt.executeUpdate() > 0) {
+					stmt.close();
+					conn.close();
+					return true;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
 	static public User getUserById(int id) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -217,7 +265,12 @@ public class User {
 				stmt.setInt(1, id);
 				ResultSet rs = stmt.executeQuery();
 				while (rs.next()) {
-					User usr = new User(rs.getInt("ID"), rs.getString("username"), "*****", rs.getString("role"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("mail"), rs.getString("address"), rs.getString("city"), rs.getString("country"), rs.getString("zipcode"));
+					User usr = new User(rs.getInt("ID"),
+							rs.getString("username"), "*****",
+							rs.getString("role"), rs.getString("firstName"),
+							rs.getString("lastName"), rs.getString("mail"),
+							rs.getString("address"), rs.getString("city"),
+							rs.getString("country"), rs.getString("zipcode"));
 					stmt.close();
 					conn.close();
 					return usr;
@@ -228,7 +281,7 @@ public class User {
 		}
 		return null;
 	}
-	
+
 	static public User getUserByMail(String mail) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -238,13 +291,17 @@ public class User {
 				stmt.setString(1, mail);
 				ResultSet rs = stmt.executeQuery();
 				while (rs.next()) {
-					User user = new User(rs.getInt("ID"), rs.getString("username"), "*****", rs.getString("role"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("mail"), rs.getString("address"), rs.getString("city"), rs.getString("country"), rs.getString("zipcode"));
+					User user = new User(rs.getInt("ID"),
+							rs.getString("username"), "*****",
+							rs.getString("role"), rs.getString("firstName"),
+							rs.getString("lastName"), rs.getString("mail"),
+							rs.getString("address"), rs.getString("city"),
+							rs.getString("country"), rs.getString("zipcode"));
 					conn.close();
 					return user;
 				}
 				conn.close();
-			}
-			catch (SQLException e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 				try {
 					conn.close();
@@ -256,32 +313,27 @@ public class User {
 		}
 		return null;
 	}
-	
-	public void setNewInformation(String address, String country, String city, String zipcode) {
+
+	public void setNewInformation(String address, String country, String city,
+			String zipcode) {
 		this.address = address;
 		this.country = country;
 		this.city = city;
 		this.zipcode = zipcode;
 	}
-	
-	
-	
+
 	public String getUsername() {
 		return username;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-	
 	public String getFirstName() {
 		return firstName;
 	}
-	
+
 	public String getLastName() {
 		return lastName;
 	}
-	
+
 	public String getMail() {
 		return mail;
 	}
@@ -293,19 +345,19 @@ public class User {
 	public String getCountry() {
 		return country;
 	}
-	
+
 	public String getCity() {
 		return city;
 	}
-	
+
 	public String getZipcode() {
 		return zipcode;
 	}
-	
+
 	public String getRole() {
 		return role;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
