@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.ArrayList, model.Product" %>
+	pageEncoding="ISO-8859-1" import="java.util.ArrayList, model.Product"%>
 <%
-ArrayList<Product> products = new ArrayList<Product>();
+	ArrayList<Product> products = new ArrayList<Product>();
 if (request.getAttribute("products") instanceof ArrayList<?>) {
 	products = (ArrayList<Product>)(request.getAttribute("products"));
 }
@@ -10,106 +10,129 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 <html>
 <head>
 <title>Lacob | Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${pageContext.request.contextPath}/css/form.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
+<link href="${pageContext.request.contextPath}/css/style.css"
+	rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/form.css"
+	rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Exo+2'
+	rel='stylesheet' type='text/css'>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/jquery1.min.js"></script>
 <!-- start menu -->
-<link href="${pageContext.request.contextPath}/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<link href="${pageContext.request.contextPath}/css/megamenu.css"
+	rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/megamenu.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".megamenu").megamenu();
+	});
+</script>
 <!--start slider -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fwslider.css" media="all">
-    <script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
-    <script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
-    <script src="${pageContext.request.contextPath}/js/fwslider.js"></script>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/fwslider.css" media="all">
+<script src="${pageContext.request.contextPath}/js/jquery-ui.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/css3-mediaqueries.js"></script>
+<script src="${pageContext.request.contextPath}/js/fwslider.js"></script>
 <!--end slider -->
-<script src="${pageContext.request.contextPath}/js/jquery.easydropdown.js"></script>
+<script
+	src="${pageContext.request.contextPath}/js/jquery.easydropdown.js"></script>
 </head>
 <body>
-     <div class="header-top">
-	   <div class="wrap">
-			<jsp:include page="/fragments/header.jsp"/>
+	<div class="header-top">
+		<div class="wrap">
+			<jsp:include page="/fragments/header.jsp" />
 			<div class="clear"></div>
- 		</div>
-	</div>
-	<jsp:include page="/fragments/flashMessenger.jsp"/>
-	<div class="header-bottom">
-	    <div class="wrap">
-			<jsp:include page="/fragments/menu.jsp"/>
-     <div class="clear"></div>
-     </div>
-	</div>
-  <!-- start slider -->
-    <div id="fwslider">
-        <div class="slider_container">
-            <div class="slide"> 
-                <!-- Slide image -->
-                    <img src="${pageContext.request.contextPath}/images/banner1.png" alt=""/>
-                <!-- /Slide image -->
-                <!-- Texts container -->
-                <div class="slide_content">
-                    <div class="slide_content_wrap">
-                        <!-- Text title -->
-                        <h4 class="title">It's not a hardware problem</h4>
-                        <!-- /Text title -->
-                        
-                        <!-- Text description -->
-                        <p class="description">It's a bocal problem</p>
-                        <!-- /Text description -->
-                    </div>
-                </div>
-                 <!-- /Texts container -->
-            </div>
-            <!-- /Duplicate to create more slides -->
-            <div class="slide">
-                <img src="${pageContext.request.contextPath}/images/banner2.png" alt=""/>
-                <div class="slide_content">
-                	<div class="slide_content_wrap">
-                		<h4 class="title">Want more than garbage ?</h4>
-                		<p class="description">Choose Lacob !</p>
-                	</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="${pageContext.request.contextPath}/images/banner3.png" alt=""/>
-                <div class="slide_content">
-                	<div class="slide_content_wrap">
-                		<h4 class="title">Epitech compliant</h4>
-                		<p class="description">2 openSuse partitions + 1 windows 8 partition</p>
-                	</div>
-                </div>
-            </div>
-            <!--/slide -->
-        </div>
-        <div class="timers"></div>
-        <div class="slidePrev"><span></span></div>
-        <div class="slideNext"><span></span></div>
-    </div>
-    <!--/slider -->
-<div class="main">
-	<div class="wrap">
-	<div class="row">
-		<div class="col-md-10">
-		<%
-		for (Product product: products) {
-		%>
-		<jsp:include page="/fragments/productBox.jsp">
-			<jsp:param name="productId" value="<%= product.getId() %>"/>
-    		<jsp:param name="productName" value="<%= product.getName() %>"/>
-    		<jsp:param name="productPrice" value="<%= product.getPrice() %>"/>
-    		<jsp:param name="productCreationDate" value="<%= product.getCreationDate() %>"/>
-    		<jsp:param name="productNew" value="<%= product.isNew() %>"/>
-    	</jsp:include>
-		<%
-		}
-		%>
 		</div>
 	</div>
-		<!-- <div class="section group">
+	<jsp:include page="/fragments/flashMessenger.jsp" />
+	<div class="header-bottom">
+		<div class="wrap">
+			<jsp:include page="/fragments/menu.jsp" />
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- start slider -->
+	<div id="fwslider">
+		<div class="slider_container">
+			<div class="slide">
+				<!-- Slide image -->
+				<img src="${pageContext.request.contextPath}/images/banner1.png"
+					alt="" />
+				<!-- /Slide image -->
+				<!-- Texts container -->
+				<div class="slide_content">
+					<div class="slide_content_wrap">
+						<!-- Text title -->
+						<h4 class="title">It's not a hardware problem</h4>
+						<!-- /Text title -->
+
+						<!-- Text description -->
+						<p class="description">It's a bocal problem</p>
+						<!-- /Text description -->
+					</div>
+				</div>
+				<!-- /Texts container -->
+			</div>
+			<!-- /Duplicate to create more slides -->
+			<div class="slide">
+				<img src="${pageContext.request.contextPath}/images/banner2.png"
+					alt="" />
+				<div class="slide_content">
+					<div class="slide_content_wrap">
+						<h4 class="title">Want more than garbage ?</h4>
+						<p class="description">Choose Lacob !</p>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<img src="${pageContext.request.contextPath}/images/banner3.png"
+					alt="" />
+				<div class="slide_content">
+					<div class="slide_content_wrap">
+						<h4 class="title">Epitech compliant</h4>
+						<p class="description">2 openSuse partitions + 1 windows 8
+							partition</p>
+					</div>
+				</div>
+			</div>
+			<!--/slide -->
+		</div>
+		<div class="timers"></div>
+		<div class="slidePrev">
+			<span></span>
+		</div>
+		<div class="slideNext">
+			<span></span>
+		</div>
+	</div>
+	<!--/slider -->
+	<div class="main">
+		<div class="wrap">
+			<div class="row">
+				<div class="col-md-10">
+					<%
+						for (Product product: products) {
+					%>
+					<jsp:include page="/fragments/productBox.jsp">
+						<jsp:param name="productId" value="<%=product.getId()%>" />
+						<jsp:param name="productName" value="<%=product.getName()%>" />
+						<jsp:param name="productPrice" value="<%=product.getPrice()%>" />
+						<jsp:param name="productCreationDate"
+							value="<%=product.getCreationDate()%>" />
+						<jsp:param name="productNew" value="<%=product.isNew()%>" />
+					</jsp:include>
+					<%
+						}
+					%>
+				</div>
+			</div>
+			<!-- <div class="section group">
 		  <div class="cont span_2_of_3">
 		  	<h2 class="head">Hard Drive Products</h2>
 			<div class="top-box">
@@ -241,157 +264,58 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 		  </div>
 		  -->
 			<div class="rsidebar span_1_of_left">
-				<div class="top-border"> </div>
-				 <div class="border">
-	             <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
-	             <link href="css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
-				  <script src="${pageContext.request.contextPath}/js/jquery.nivo.slider.js"></script>
-				    <script type="text/javascript">
-				    $(window).load(function() {
-				        $('#slider').nivoSlider();
-				    });
-				    </script>
-		    <div class="slider-wrapper theme-default">
-              <div id="slider" class="nivoSlider">
-                <img src="${pageContext.request.contextPath}/images/pic1.jpg"  alt="" />
-                <img src="${pageContext.request.contextPath}/images/pic2.jpg"  alt="" />
-                <img src="${pageContext.request.contextPath}/images/pic3.jpg"  alt="" />
-                <img src="${pageContext.request.contextPath}/images/pic4.jpg"  alt="" />
-                <img src="${pageContext.request.contextPath}/images/pic5.jpg"  alt="" />
-                <img src="${pageContext.request.contextPath}/images/pic6.jpg"  alt="" />
-<%--                	<img src="${pageContext.request.contextPath}/images/t-img2.jpg"  alt="" /> --%>
-<%--                 <img src="${pageContext.request.contextPath}/images/t-img3.jpg"  alt="" /> --%>
-              </div>
-             </div>
-              <div class="btn"><a href="single.html">Check it Out</a></div>
-             </div>
-           <div class="top-border"> </div>
-			<div class="sidebar-bottom">
-			    <h2 class="m_1">Newsletters<br> Signup</h2>
-			    <p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p>
-			    <div class="subscribe">
-					 <form method="post" action="/jweb/Newsletter?action=subscribe">
-					    <input name="mail" type="text" class="textbox">
-					    <input type="submit" value="Subscribe">
-					 </form>
-	  			</div>
-			</div>
-	    </div>
-	   <div class="clear"></div>
-	</div>
-	</div>
-	</div>
-   <div class="footer">
-		<div class="footer-top">
-			<div class="wrap">
-			  <div class="section group example">
-				<div class="col_1_of_2 span_1_of_2">
-					<ul class="f-list">
-					  <li><img src="${pageContext.request.contextPath}/images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
-					</ul>
-				</div>
-				<div class="clear"></div>
-		      </div>
-			</div>
-		</div>
-		<div class="footer-middle">
-			<div class="wrap">
-		   <div class="section group example">
-			  <div class="col_1_of_f_1 span_1_of_f_1">
-				 <div class="section group example">
-				   <div class="col_1_of_f_2 span_1_of_f_2">
-				      <h3>Facebook</h3>
-						<script>(function(d, s, id) {
-						  var js, fjs = d.getElementsByTagName(s)[0];
-						  if (d.getElementById(id)) return;
-						  js = d.createElement(s); js.id = id;
-						  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-						  fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));</script>
-						<div class="like_box">	
-							<div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+				<div class="top-border"></div>
+				<div class="border">
+					<link href="css/default.css" rel="stylesheet" type="text/css"
+						media="all" />
+					<link href="css/nivo-slider.css" rel="stylesheet" type="text/css"
+						media="all" />
+					<script
+						src="${pageContext.request.contextPath}/js/jquery.nivo.slider.js"></script>
+					<script type="text/javascript">
+						$(window).load(function() {
+							$('#slider').nivoSlider();
+						});
+					</script>
+					<div class="slider-wrapper theme-default">
+						<div id="slider" class="nivoSlider">
+							<img src="${pageContext.request.contextPath}/images/pic1.jpg"
+								alt="" /> <img
+								src="${pageContext.request.contextPath}/images/pic2.jpg" alt="" />
+							<img src="${pageContext.request.contextPath}/images/pic3.jpg"
+								alt="" /> <img
+								src="${pageContext.request.contextPath}/images/pic4.jpg" alt="" />
+							<img src="${pageContext.request.contextPath}/images/pic5.jpg"
+								alt="" /> <img
+								src="${pageContext.request.contextPath}/images/pic6.jpg" alt="" />
+							<%--                	<img src="${pageContext.request.contextPath}/images/t-img2.jpg"  alt="" /> --%>
+							<%--                 <img src="${pageContext.request.contextPath}/images/t-img3.jpg"  alt="" /> --%>
 						</div>
- 				  </div>
-				  <div class="col_1_of_f_2 span_1_of_f_2">
-						<h3>From Twitter</h3>
-				       <div class="recent-tweet">
-							<div class="recent-tweet-icon">
-								<span> </span>
-							</div>
-							<div class="recent-tweet-info">
-								<p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-							</div>
-							<div class="clear"> </div>
-					   </div>
-					   <div class="recent-tweet">
-							<div class="recent-tweet-icon">
-								<span> </span>
-							</div>
-							<div class="recent-tweet-info">
-								<p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
-							</div>
-							<div class="clear"> </div>
-					  </div>
+					</div>
+					<div class="btn">
+						<a href="single.html">Check it Out</a>
+					</div>
 				</div>
-				<div class="clear"></div>
-		      </div>
- 			 </div>
-			 <div class="col_1_of_f_1 span_1_of_f_1">
-			   <div class="section group example">
-				 <div class="col_1_of_f_2 span_1_of_f_2">
-				    <h3>Information</h3>
-						<ul class="f-list1">
-						    <li><a href="#">Duis autem vel eum iriure </a></li>
-				            <li><a href="#">anteposuerit litterarum formas </a></li>
-				            <li><a href="#">Tduis dolore te feugait nulla</a></li>
-				             <li><a href="#">Duis autem vel eum iriure </a></li>
-				            <li><a href="#">anteposuerit litterarum formas </a></li>
-				            <li><a href="#">Tduis dolore te feugait nulla</a></li>
-			         	</ul>
- 				 </div>
-				 <div class="col_1_of_f_2 span_1_of_f_2">
-				   <h3>Contact us</h3>
-						<div class="company_address">
-							   		<p>Rue Jean Jaures - Villejuif</p>
-							   		<p>France</p>
-					   		<p>Phone: 06 18 01 83 96</p>
-					 	 	<p>Email: <span>aurelien.prieur@epitech.eu</span></p>
-					   		
-					   </div>
-					   <div class="social-media">
-						     <ul>
-						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Google"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Linked in"><a href="#" target="_blank"> </a> </span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Rss"><a href="#" target="_blank"> </a></span></li>
-						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Facebook"><a href="#" target="_blank"> </a></span></li>
-						    </ul>
-					   </div>
+				<div class="top-border"></div>
+				<div class="sidebar-bottom">
+					<h2 class="m_1">
+						Newsletters<br> Signup
+					</h2>
+					<p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p>
+					<div class="subscribe">
+						<form method="post" action="/jweb/Newsletter?action=subscribe">
+							<input name="mail" type="text" class="textbox"> <input
+								type="submit" value="Subscribe">
+						</form>
+					</div>
 				</div>
-				<div class="clear"></div>
-		    </div>
-		   </div>
-		  <div class="clear"></div>
-		    </div>
-		  </div>
+			</div>
+			<div class="clear"></div>
 		</div>
-		<div class="footer-bottom">
-			<div class="wrap">
-	             <div class="copy">
-			        <p>Â© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
-		         </div>
-				<div class="f-list2">
-				 <ul>
-					<li class="active"><a href="about.html">About Us</a></li> |
-					<li><a href="delivery.html">Delivery & Returns</a></li> |
-					<li><a href="delivery.html">Terms & Conditions</a></li> |
-					<li><a href="contact.html">Contact Us</a></li> 
-				 </ul>
-			    </div>
-			    <div class="clear"></div>
-		      </div>
-	     </div>
 	</div>
+	</div>
+	<jsp:include page="/fragments/footer.jsp" />
 </body>
- <!-- Bootstrap Core JavaScript -->
-    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </html>

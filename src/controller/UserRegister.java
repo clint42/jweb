@@ -94,6 +94,8 @@ public class UserRegister extends HttpServlet {
 							"The creation of your account failed");
 			} 
 			catch (UserMailAlreadyUsedException e) {
+				FlashMessenger.getMessenger(session).addErrorMessage(
+						"Username or E-mail already used");
 				e.printStackTrace();
 			}
 		}

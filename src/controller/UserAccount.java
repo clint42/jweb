@@ -106,6 +106,7 @@ public class UserAccount extends HttpServlet {
 			if (actual_user.delete()) {
 				FlashMessenger.getMessenger(session).addSuccessMessage(
 						"Your account has been erase");
+				session.invalidate();
 				response.sendRedirect("/jweb/Home");
 				return true;
 			} else

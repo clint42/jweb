@@ -1,5 +1,7 @@
 package model;
 
+import helper.FlashMessenger;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -119,7 +121,7 @@ public class User {
 	}
 
 	private boolean insert(Connection conn) throws UserMailAlreadyUsedException {
-		if (this.isUserAndMailNotUsed(conn)) {
+		if (!this.isUserAndMailNotUsed(conn)) {
 			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail, address, city, country, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt;
 			try {
@@ -238,12 +240,12 @@ public class User {
 	public boolean changePasswordToDb(String password) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
-			String query = "UPDATE user SET password=? WHERE id=?";
+			String query = "UPDATE user SET password=? WHERE username=?";
 			try {
 				PreparedStatement stmt = conn.prepareStatement(query,
 						Statement.RETURN_GENERATED_KEYS);
 				stmt.setString(1, password);
-				stmt.setInt(2, this.id);
+				stmt.setString(2, this.username);
 				if (stmt.executeUpdate() > 0) {
 					stmt.close();
 					conn.close();
