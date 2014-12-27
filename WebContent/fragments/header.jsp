@@ -7,8 +7,13 @@
 			%>
 			<li class="active"><a href="/jweb/User/Account"><%= user.getFirstName() %> <%= user.getLastName() %></a></li>
 			<li><a href="/jweb/User/Account?action=logout">Logout</a></li>
-			<li><a href="checkout.html">Wishlist</a></li>
-			<li><a href="checkout.html">Checkout</a></li>
+			<%
+			if (user.getRole().equals("A")) {
+				%>
+					<li><a href="/jweb/Admin/Home">Administration</a>
+				<%
+			}
+			%>
 			<%
 		}
 		else {
