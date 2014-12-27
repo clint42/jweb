@@ -97,7 +97,6 @@ if (request.getAttribute("formValues") != null && request.getAttribute("formValu
 						<input name="zipcode" type="text" class="form-control" id="zipcode" placeholder="zipcode" value="<%= formValues.get("zipcode")%>">
 					</div>
 					<input type="submit" name="publish" value="Save" class="btn btn-default">
-					<a href="#" class="btn btn-danger">Delete !</a>
 					<a href="/jweb/Admin/Users/" class="btn btn-primary">Cancel</a>
 				</form>
 			</div>

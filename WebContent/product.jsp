@@ -57,6 +57,9 @@ if (request.getAttribute("product") instanceof Product) {
 			<p>
 			<%= product.getDescription() %>
 			</p>
+			<p>
+			Items left: <%= product.getQuantity() %>
+			</p>
 			<p>Product added to our list on : <%= product.getCreationDate() %></p>
 		</div>
 	</div>
