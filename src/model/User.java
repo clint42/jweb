@@ -363,4 +363,36 @@ public class User {
 	public int getId() {
 		return id;
 	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
 }
