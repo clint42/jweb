@@ -115,7 +115,6 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 	<div class="main">
 		<div class="wrap">
 			<div class="row">
-				<div class="col-md-10">
 					<%
 						for (Product product: products) {
 					%>
@@ -130,7 +129,6 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 					<%
 						}
 					%>
-				</div>
 			</div>
 			<!-- <div class="section group">
 		  <div class="cont span_2_of_3">
@@ -265,43 +263,12 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 		  -->
 			<div class="rsidebar span_1_of_left">
 				<div class="top-border"></div>
-				<div class="border">
-					<link href="css/default.css" rel="stylesheet" type="text/css"
-						media="all" />
-					<link href="css/nivo-slider.css" rel="stylesheet" type="text/css"
-						media="all" />
-					<script
-						src="${pageContext.request.contextPath}/js/jquery.nivo.slider.js"></script>
-					<script type="text/javascript">
-						$(window).load(function() {
-							$('#slider').nivoSlider();
-						});
-					</script>
-					<div class="slider-wrapper theme-default">
-						<div id="slider" class="nivoSlider">
-							<img src="${pageContext.request.contextPath}/images/pic1.jpg"
-								alt="" /> <img
-								src="${pageContext.request.contextPath}/images/pic2.jpg" alt="" />
-							<img src="${pageContext.request.contextPath}/images/pic3.jpg"
-								alt="" /> <img
-								src="${pageContext.request.contextPath}/images/pic4.jpg" alt="" />
-							<img src="${pageContext.request.contextPath}/images/pic5.jpg"
-								alt="" /> <img
-								src="${pageContext.request.contextPath}/images/pic6.jpg" alt="" />
-							<%--                	<img src="${pageContext.request.contextPath}/images/t-img2.jpg"  alt="" /> --%>
-							<%--                 <img src="${pageContext.request.contextPath}/images/t-img3.jpg"  alt="" /> --%>
-						</div>
-					</div>
-					<div class="btn">
-						<a href="single.html">Check it Out</a>
-					</div>
-				</div>
 				<div class="top-border"></div>
 				<div class="sidebar-bottom">
 					<h2 class="m_1">
 						Newsletters<br> Signup
 					</h2>
-					<p class="m_text">Lorem ipsum dolor sit amet, consectetuer</p>
+					<p class="m_text">Enter your email address here to subscribe to our newsletters</p>
 					<div class="subscribe">
 						<form method="post" action="/jweb/Newsletter?action=subscribe">
 							<input name="mail" type="text" class="textbox"> <input
@@ -312,7 +279,6 @@ if (request.getAttribute("products") instanceof ArrayList<?>) {
 			</div>
 			<div class="clear"></div>
 		</div>
-	</div>
 	</div>
 	<jsp:include page="/fragments/footer.jsp" />
 </body>

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="model.Product" %>
 
-<div class="top-box">
 	<div class="col_1_of_3 span_1_of_3"> 
 		<a href="/jweb/Product/<%= request.getParameter("productId") %>">
 		<div class="inner_content clearfix">
@@ -25,4 +24,3 @@
 		</div>
 		</a>
 	</div>
-</div>
