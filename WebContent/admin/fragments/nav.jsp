@@ -253,7 +253,12 @@
                             <a href="/jweb/Admin/Users"><i class="fa fa-users fa-fw"></i> Users</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="#"><i class="fa fa-cubes fa-fw"></i> Products<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                   <a href="/jweb/Admin/Products/Add">Add a product...</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>

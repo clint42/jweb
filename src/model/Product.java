@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,6 +12,7 @@ public class Product {
 	private int id = 0;
 	private String name = "";
 	private String description = "";
+	private int category = 0;
 	private double price = 0.0;
 	private int quantity = 0;
 	private int createdBy = 0;
@@ -33,6 +35,14 @@ public class Product {
 		this.createdBy = createdBy;
 		this.creationDate = creationDate;
 		this.updateDate = updateDate;
+	}
+	
+	public Product(String name, String description, double price, int quantity, int createdBy) {
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.quantity = quantity;
+		this.createdBy = createdBy;
 	}
 	
 	static public ArrayList<Product> fetchAll() {
@@ -84,6 +94,59 @@ public class Product {
 		return false;
 	}
 	
+	private boolean insert(Connection conn) {
+		String query = "INSERT INTO product (name, description, category, price, quantity, createdBy) VALUES(?,?,?,?,?,?)";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			stmt.setString(1, this.name);
+			stmt.setString(2, description);
+			if (this.category == 0) {
+				stmt.setNull(3, java.sql.Types.INTEGER);
+			}
+			else {
+				stmt.setInt(3, this.category);
+			}
+			stmt.setDouble(4, this.price);
+			stmt.setInt(5, this.quantity);
+			stmt.setInt(6, this.createdBy);
+			if (stmt.executeUpdate() > 0) {
+				stmt.close();
+				return true;
+			}
+			stmt.close();
+			return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	private boolean update(Connection conn) {
+		/*
+		 * Not ready yet
+		 */
+		return false;
+	}
+	
+	public boolean saveToDb() {
+		Connection conn = new MariaDbConnection().getConn();
+		if (conn != null) {
+			boolean ret = false;
+			if (this.id == 0) {
+				ret = this.insert(conn);
+			}
+			else {
+				ret = this.update(conn);
+			}
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return ret;
+		}
+		return false;
+	}
 	public ArrayList<Review> getReviews() {
 		if (this.id > 0 && this.reviews == null) {
 			this.reviews = Review.fetchAllProductReview(this.id);

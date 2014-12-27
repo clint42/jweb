@@ -48,8 +48,12 @@
     <servlet-class>controller.AdminNews</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>AdminUser</servlet-name>
-  	<servlet-class>controller.AdminUser</servlet-class>
+    <servlet-name>AdminUser</servlet-name>
+    <servlet-class>controller.AdminUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminProduct</servlet-name>
+  	<servlet-class>controller.AdminProduct</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
@@ -92,8 +96,12 @@
     <url-pattern>/Admin/News/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>AdminUser</servlet-name>
-  	<url-pattern>/Admin/Users/*</url-pattern>
+    <servlet-name>AdminUser</servlet-name>
+    <url-pattern>/Admin/Users/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminProduct</servlet-name>
+  	<url-pattern>/Admin/Products/*</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>UserFilter</filter-name>
