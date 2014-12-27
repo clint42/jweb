@@ -238,13 +238,13 @@
                             <a class="active" href="/jweb/Admin/Home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> News<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-newspaper-o fa-fw"></i> News<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <i class="fa fa-newspaper-o fa-fw"></i><a href="/jweb/Admin/News/Add"> Add a news...</a>
+                                   <a href="/jweb/Admin/News/Add">Add a news...</a>
                                 </li>
                                 <li>
-                                    <i class="fa fa-newspaper-o fa-fw"></i><a href="/jweb/Admin/News/Show">See all news</a>
+                                    <a href="/jweb/Admin/News/Show">See all news</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
