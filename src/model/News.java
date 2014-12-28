@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * News class is linked to news table
+ * @author prieur_b
+ *
+ */
 public class News {
 	private int id = 0;
 	private String title = "";
@@ -19,6 +24,13 @@ public class News {
 		
 	}
 	
+	/**
+	 * News constructor.
+	 * @param id
+	 * @param title
+	 * @param content
+	 * @param createdBy
+	 */
 	public News(int id, String title, String content, int createdBy) {
 		this.id = id;
 		this.title = title;
@@ -26,6 +38,14 @@ public class News {
 		this.createdBy = createdBy;
 	}
 	
+	/**
+	 * News constructor
+	 * @param id
+	 * @param title
+	 * @param content
+	 * @param createdBy
+	 * @param createdDate
+	 */
 	public News(int id, String title, String content, int createdBy, Date createdDate) {
 		this.id = id;
 		this.title = title;
@@ -34,6 +54,10 @@ public class News {
 		this.createdDate = createdDate;
 	}
 	
+	/**
+	 * Fetch all news from database.
+	 * @return ArrayList<News> containing all news present in database (table news)
+	 */
 	static public ArrayList<News> fetchAll() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -56,6 +80,11 @@ public class News {
 		return null;
 	}
 	
+	/**
+	 * Fetch a product from database by its id
+	 * @param id
+	 * @return true if product is found. false otherwise or if an error occurred.
+	 */
 	public boolean fetchById(int id) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -128,6 +157,10 @@ public class News {
 		return false;
 	}
 	
+	/**
+	 * Save the current instance data to database (product table)
+	 * @return false if an error occurred. true otherwise
+	 */
 	public boolean saveToDb() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {

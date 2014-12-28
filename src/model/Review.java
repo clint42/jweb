@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Review class is linked to review table. Use it to fetch information from DB, create new review...
+ * @author prieur_b
+ *
+ */
 public class Review {
 	private int id = 0;
 	private String title = "";
@@ -23,6 +28,16 @@ public class Review {
 		
 	}
 	
+	/**
+	 * Review constructor which take all review properties as parameter
+	 * @param id
+	 * @param title
+	 * @param text
+	 * @param rank
+	 * @param userId
+	 * @param productId
+	 * @param creationDate
+	 */
 	public Review(int id, String title, String text, double rank, int userId, int productId, Date creationDate) {
 		this.id = id;
 		this.title = title;
@@ -33,6 +48,14 @@ public class Review {
 		this.creationDate = creationDate;
 	}
 	
+	/**
+	 * Review constructor. Basically used to create a new review in order to be able to save it to database
+	 * @param title
+	 * @param text
+	 * @param rank
+	 * @param userId
+	 * @param productId
+	 */
 	public Review(String title, String text, double rank, int userId, int productId) {
 		this.title = title;
 		this.text = text;
@@ -41,6 +64,11 @@ public class Review {
 		this.productId = productId;
 	}
 	
+	/**
+	 * Fetch all reviews present in database
+	 * @param productId
+	 * @return Return an ArrayList containing an instance of Review for each existing review in database
+	 */
 	static public ArrayList<Review> fetchAllProductReview(int productId) {
 		Connection conn = new MariaDbConnection().getConn();
 		ArrayList<Review> results = new ArrayList<Review>();
@@ -96,6 +124,10 @@ public class Review {
 		return false;
 	}
 	
+	/**
+	 * Save the current instance data to database (review table)
+	 * @return false if an error occurred. true otherwise
+	 */
 	public boolean saveToDb() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {

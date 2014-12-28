@@ -8,6 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Product class is linked to product table
+ * @author prieur_b
+ *
+ */
 public class Product {
 	private int id = 0;
 	private String name = "";
@@ -26,6 +31,17 @@ public class Product {
 		
 	}
 	
+	/**
+	 * Product construct which take data for all Product properties
+	 * @param id
+	 * @param name
+	 * @param description
+	 * @param price
+	 * @param quantity
+	 * @param createdBy
+	 * @param creationDate
+	 * @param updateDate
+	 */
 	public Product(int id, String name, String description, double price, int quantity, int createdBy, Date creationDate, Date updateDate) {
 		this.id = id;
 		this.name = name;
@@ -37,6 +53,14 @@ public class Product {
 		this.updateDate = updateDate;
 	}
 	
+	/**
+	 * Product constructor. Basically used to create a new Product in order to save it to db
+	 * @param name
+	 * @param description
+	 * @param price
+	 * @param quantity
+	 * @param createdBy
+	 */
 	public Product(String name, String description, double price, int quantity, int createdBy) {
 		this.name = name;
 		this.description = description;
@@ -45,6 +69,10 @@ public class Product {
 		this.createdBy = createdBy;
 	}
 	
+	/**
+	 * Fetch all products from database.
+	 * @return ArrayList<Product> containing all product present in database (table product)
+	 */
 	static public ArrayList<Product> fetchAll() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -66,6 +94,11 @@ public class Product {
 		return null;
 	}
 	
+	/**
+	 * Fetch a product from database by its id
+	 * @param id
+	 * @return true if product is found. false otherwise or if an error occurred.
+	 */
 	public boolean fetchById(int id) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -128,6 +161,10 @@ public class Product {
 		return false;
 	}
 	
+	/**
+	 * Save the current instance data to database (product table)
+	 * @return false if an error occurred. true otherwise
+	 */
 	public boolean saveToDb() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
