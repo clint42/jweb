@@ -35,6 +35,13 @@ public class UserAccount extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+
+	/**
+	 * isEmailAddress check if the mail provide is has a correct syntax
+	 * @param email
+	 * @return boolean
+	 */
+
 	public static boolean isEmailAddress(String email) {
 		Pattern p = Pattern
 				.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$");

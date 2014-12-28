@@ -31,6 +31,20 @@ public class User {
 
 	}
 
+	/**
+	 * The constructor initialize all the variables of the user
+	 * @param id
+	 * @param username
+	 * @param password
+	 * @param firstName
+	 * @param lastName
+	 * @param mail
+	 * @param address
+	 * @param city
+	 * @param country
+	 * @param zipcode
+	 */
+	
 	public User(int id, String username, String password, String firstName,
 			String lastName, String mail, String address, String city,
 			String country, String zipcode) {
@@ -62,6 +76,13 @@ public class User {
 		this.zipcode = zipcode;
 	}
 
+	/**
+	 * fetchUserFromDb retrieves the user with the username and the password
+	 * @param username
+	 * @param password
+	 * @return boolean
+	 */
+	
 	public boolean fetchUserFromDb(String username, String password) {
 		PreparedStatement stmt = null;
 		Connection conn = new MariaDbConnection().getConn();
@@ -98,6 +119,12 @@ public class User {
 		return false;
 	}
 
+	/**
+	 * This function check in the database if there are already the username or the mail of the user
+	 * @param conn
+	 * @return boolean
+	 */
+	
 	private boolean isUserAndMailNotUsed(Connection conn) {
 		String query = "SELECT COUNT(*) AS nb FROM user WHERE username=? OR mail=?";
 		try {
@@ -120,6 +147,13 @@ public class User {
 		return true;
 	}
 
+	/**
+	 * insert uses the sql query "INSERT" to add the user in the database
+	 * @param conn
+	 * @return boolean
+	 * @throws UserMailAlreadyUsedException
+	 */
+	
 	private boolean insert(Connection conn) throws UserMailAlreadyUsedException {
 		if (!this.isUserAndMailNotUsed(conn)) {
 			String query = "INSERT INTO user (username, password, firstName, lastName, role, mail, address, city, country, zipcode) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -153,6 +187,12 @@ public class User {
 		}
 	}
 
+	/**
+	 * update uses the sql query "UPDATE" to update the user in the database
+	 * @param conn
+	 * @return boolean
+	 */
+	
 	private boolean update(Connection conn) {
 		String query = "UPDATE user SET address=?, country=?, city=?, zipcode=? WHERE id=?";
 		try {
@@ -174,6 +214,11 @@ public class User {
 		return false;
 	}
 
+	/**
+	 * delete uses the sql query "DELETE" to erase the user in the database
+	 * @return boolean
+	 */
+
 	public boolean delete() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null && this.id > 0) {
@@ -193,6 +238,13 @@ public class User {
 		return false;
 	}
 
+	/**
+	 * saveToDb save the user in the database
+	 * if the user already exist, the function update the user in the database
+	 * @return boolean
+	 * @throws UserMailAlreadyUsedException
+	 */
+	
 	public boolean saveToDb() throws UserMailAlreadyUsedException {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -212,6 +264,12 @@ public class User {
 		return false;
 	}
 
+	/**
+	 * isSamePassword check if the user provides the same password as the database
+	 * @param password
+	 * @return boolean
+	 */
+	
 	public boolean isSamePassword(String password) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -237,6 +295,12 @@ public class User {
 		return false;
 	}
 
+	/**
+	* changePasswordToDb uses the sql query "UPDATE" to update the user password in the database	
+	* @param password
+	* @return boolean
+	*/
+	
 	public boolean changePasswordToDb(String password) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -258,6 +322,12 @@ public class User {
 		return false;
 	}
 
+	/**
+	 * getUserById retrieves the user with the id in the param
+	 * @param id
+	 * @return User
+	 */
+	
 	static public User getUserById(int id) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -284,6 +354,12 @@ public class User {
 		return null;
 	}
 
+	/**
+	 * getUserByMail retrieves the user with mail in the param
+	 * @param mail
+	 * @return User
+	 */
+	
 	static public User getUserByMail(String mail) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
