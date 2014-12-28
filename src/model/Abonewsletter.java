@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Product class is linked to product table
+ * Product class is linked to newsletter table
  * @author prieur_b
  *
  */
