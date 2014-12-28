@@ -6,6 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Product class is linked to newsletter table
+ * @author prieur_b
+ *
+ */
 public class Abonewsletter {
 	private int id = 0;
 	private String mail = "";
@@ -25,6 +30,11 @@ public class Abonewsletter {
 		this.userId = userId;
 	}
 
+	/**
+	 * Check if an specified email address is already present in the newsletter table
+	 * @param mail
+	 * @return true if the specified address already exist in the newsletter table. False otherwise or if an error occurred
+	 */
 	static public boolean isMailRegistered(String mail) {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
@@ -53,6 +63,10 @@ public class Abonewsletter {
 		return false;
 	}
 	
+	/**
+	 * Save the current instance data to database
+	 * @return false if an error occurred, true otherwise
+	 */
 	public boolean saveToDb() {
 		Connection conn = new MariaDbConnection().getConn();
 		if (conn != null) {
